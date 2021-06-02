@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_usulan">
+
+    <fragment
+        android:id="@+id/nav_usulan"
+        android:name="com.example.sambang.Dashboard.Usulan.UsulanFragment"
+        android:label="Usulan"
+        tools:layout="@layout/fragment_usulan" />
+    <fragment
+        android:id="@+id/nav_data_bantuan"
+        android:name="com.example.sambang.Dashboard.Bantuan.BantuanFragment"
+        android:label="Data Bantuan"
+        tools:layout="@layout/fragment_bantuan" />
+    <fragment
+        android:id="@+id/nav_kependudukan"
+        android:name="com.example.sambang.Dashboard.Kependudukan.KependudukanFragment"
+        android:label="Kependudukan"
+        tools:layout="@layout/fragment_kependudukan" />
+    <fragment
+        android:id="@+id/nav_master"
+        android:name="com.example.sambang.Dashboard.Master.MasterFragment"
+        android:label="Master"
+        tools:layout="@layout/fragment_master" />
+    <fragment
+        android:id="@+id/nav_report"
+        android:name="com.example.sambang.Dashboard.Report.ReportFragment"
+        android:label="Report"
+        tools:layout="@layout/fragment_report" />
+</navigation>

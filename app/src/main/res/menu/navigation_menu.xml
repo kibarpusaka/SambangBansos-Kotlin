@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_usulan"
+            android:icon="@drawable/ic_usulan"
+            android:title="Usulan">
+        </item>
+         <item android:id="@+id/nav_data_bantuan"
+            android:icon="@drawable/ic_baseline_speed_24"
+            android:title="Data Bantuan">
+        </item>
+        <item android:id="@+id/nav_kependudukan"
+            android:icon="@drawable/ic_kependudukan"
+            android:title="Kependudukan">
+        </item>
+        <item android:id="@+id/nav_master"
+            android:icon="@drawable/ic_master"
+            android:title="Master">
+        </item>
+        <item android:id="@+id/nav_report"
+            android:icon="@drawable/ic_report"
+            android:title="Report">
+        </item>
+    </group>
+</menu>
