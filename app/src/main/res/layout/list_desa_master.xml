@@ -77,13 +77,13 @@
                 android:text="PEMERINTAH DESA ADISANA" />
 
             <TextView
-                android:id="@+id/tv_kode_master"
+                android:id="@+id/tv_desa_kode_master"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="03200L" />
 
             <TextView
-                android:id="@+id/tv_tahun_bantuan_master"
+                android:id="@+id/tv_desa_kode_kecamatan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="KECAMATAN BUMIAYU" />
