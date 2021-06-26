@@ -5,10 +5,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class SambangUtils {
-    fun getSambangClientInstance(url : String) : Retrofit {
+    fun getSambangClientInstance() : Retrofit {
         val gson = GsonBuilder().setLenient().create()
         return Retrofit.Builder()
-            .baseUrl(url)
+            .baseUrl("http://9379d98d6ac1.ngrok.io/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
