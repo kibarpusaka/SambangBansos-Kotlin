@@ -1,4 +1,4 @@
-package com.example.sambang
+package com.example.sambang.Utils
 
 import com.google.gson.annotations.SerializedName
 

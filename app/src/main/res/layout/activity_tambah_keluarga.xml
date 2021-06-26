@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#4169E1"
-    tools:context=".Dashboard.Kependudukan.Keluarga.TambahKeluargaActivity">
+    tools:context=".Dashboard.Kependudukan.Keluarga.AddKeluargaActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_desa_master"
@@ -70,7 +70,7 @@
             />
 
         <EditText
-            android:id="@+id/et_desa_nokk"
+            android:id="@+id/et_keluarga_nokk"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -90,7 +90,7 @@
             />
 
         <EditText
-            android:id="@+id/et_desa_alamat"
+            android:id="@+id/et_keluarga_alamat"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -109,7 +109,7 @@
             />
 
         <EditText
-            android:id="@+id/et_desa_rt"
+            android:id="@+id/et_keluarga_rt"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -128,7 +128,7 @@
             />
 
         <EditText
-            android:id="@+id/et_desa_rw"
+            android:id="@+id/et_keluarga_rw"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -148,7 +148,7 @@
             />
 
         <EditText
-            android:id="@+id/et_desa_desa"
+            android:id="@+id/et_keluarga_desa"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
@@ -158,7 +158,7 @@
             />
 
         <Button
-            android:id="@+id/btn_create_desa"
+            android:id="@+id/btn_create_keluarga"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -1,4 +1,4 @@
-package com.example.sambang.Dashboard.Master.Kecamatan.Model
+package com.example.sambang.Dashboard.Master.Kecamatan.Data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

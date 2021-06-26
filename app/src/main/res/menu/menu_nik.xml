@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+    <item
+        android:id="@+id/editNikAktif"
+        android:icon="@drawable/ic_edit"
+        android:title="Edit" />
+    <item
+        android:id="@+id/hapusNikAktif"
+        android:icon="@drawable/ic_delete"
+        android:title="Hapus" />
 </menu>

@@ -7,12 +7,20 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.navigation_header.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Base()  {
+
+    private val TAG = MainActivity::class.java.simpleName
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        cekSesi(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        tv_nama_profile.text = "User\n${user?.user_id}"
 
         setSupportActionBar(toolbar)
 

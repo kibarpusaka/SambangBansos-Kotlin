@@ -1,4 +1,4 @@
-package com.example.sambang.Dashboard.Kependudukan.Keluarga
+package com.example.sambang.Dashboard.Kependudukan.Keluarga.Data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -12,7 +12,7 @@ data class ModelKeluarga (
 
     @SerializedName("NomerKK")
     @Expose
-    var nomerkk : Int? = null,
+    var nomerkk : String? = null,
 
     @SerializedName("Alamat")
     @Expose

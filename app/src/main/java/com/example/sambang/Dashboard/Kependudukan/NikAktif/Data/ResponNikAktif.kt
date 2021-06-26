@@ -1,3 +1,16 @@
 package com.example.sambang.Dashboard.Kependudukan.NikAktif.Data
 
-data class ResponNikAktif()
+import com.google.gson.annotations.SerializedName
+
+data class ResponNikAktif(
+
+    @field:SerializedName("status")
+    val status: Boolean? = null,
+
+    @field:SerializedName("message")
+    val message: String? = null,
+
+    @field:SerializedName("nikaktif")
+    val nikaktif: List<ModelNikAktif>? = null
+
+)

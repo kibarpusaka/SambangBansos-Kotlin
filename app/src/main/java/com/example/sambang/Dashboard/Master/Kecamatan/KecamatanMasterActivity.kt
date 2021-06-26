@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sambang.Api.ApiSambang
+import com.example.sambang.Dashboard.Master.Kecamatan.Adapter.AdapterKecamatan
+import com.example.sambang.Dashboard.Master.Kecamatan.Data.ModelKecamatanMaster
 import com.example.sambang.R
-import com.example.sambang.Utils.SambangUtils
+import com.example.sambang.Api.SambangUtils
 import kotlinx.android.synthetic.main.activity_kecamatan_master.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +29,7 @@ class KecamatanMasterActivity : AppCompatActivity() {
 
 
     fun getDataKecamatan(){
-        val kecamatan =  SambangUtils().getSambangClientInstance("http://192.168.1.17:1337/").create(ApiSambang::class.java)
+        val kecamatan =  SambangUtils.service()
         kecamatan.getKecamatan().enqueue(object : Callback<List<ModelKecamatanMaster>>{
             override fun onResponse(
                 call: Call<List<ModelKecamatanMaster>>,

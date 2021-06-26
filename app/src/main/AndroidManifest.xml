@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SAMBANG"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Dashboard.Kependudukan.Keluarga.TambahKeluargaActivity"></activity>
+        <activity android:name=".Dashboard.Kependudukan.NikAktif.AddNikAktifActivity"></activity>
+        <activity android:name=".Dashboard.Kependudukan.Keluarga.AddKeluargaActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikNonAktif.NikNonAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikAktif.NikAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.Keluarga.KeluargaActivity" />

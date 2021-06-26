@@ -1,4 +1,4 @@
-package com.example.sambang
+package com.example.sambang.Utils
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
@@ -14,14 +14,14 @@ open class Base : AppCompatActivity(){
     var user : ModelLogin? = null
 
     fun cekSesi(activity: Activity){
-        val intent = intent.getSerializableExtra("user")
+//        val intent = intent.getSerializableExtra("user")
 
-        if (intent == null){
-            activity.toast("anda belum login").show()
-            activity.finish()
-        } else {
-            user = intent as ModelLogin
-        }
+//        if (intent == null){
+//            activity.toast("anda belum login").show()
+//            activity.finish()
+//        } else {
+//            user = intent as ModelLogin
+//        }
 
     }
 }

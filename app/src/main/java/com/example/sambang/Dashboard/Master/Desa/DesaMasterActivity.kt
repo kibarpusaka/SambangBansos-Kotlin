@@ -5,9 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sambang.Api.ApiSambang
-import com.example.sambang.Dashboard.Master.Desa.Model.ModelDesaMaster
+import com.example.sambang.Dashboard.Master.Desa.Adapter.AdapterDesa
+import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.R
-import com.example.sambang.Utils.SambangUtils
+import com.example.sambang.Api.SambangUtils
 import kotlinx.android.synthetic.main.activity_desa_master.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +28,7 @@ class DesaMasterActivity : AppCompatActivity() {
     }
 
     fun getDesa() {
-        val desa = SambangUtils().getSambangClientInstance("http://192.168.1.17:1337/").create(ApiSambang::class.java)
+        val desa = SambangUtils.service()
         desa.getDesa().enqueue(object : Callback<List<ModelDesaMaster>>{
             override fun onResponse(
                 call: Call<List<ModelDesaMaster>>,

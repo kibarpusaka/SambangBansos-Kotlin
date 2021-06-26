@@ -1,9 +1,10 @@
-package com.example.sambang.Dashboard.Master.Kecamatan
+package com.example.sambang.Dashboard.Master.Kecamatan.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sambang.Dashboard.Master.Kecamatan.Data.ModelKecamatanMaster
 import com.example.sambang.R
 import kotlinx.android.synthetic.main.list_kecamatan_master.view.*
 

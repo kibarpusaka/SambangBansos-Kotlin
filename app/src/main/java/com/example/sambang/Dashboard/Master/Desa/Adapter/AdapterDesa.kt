@@ -1,10 +1,10 @@
-package com.example.sambang.Dashboard.Master.Desa
+package com.example.sambang.Dashboard.Master.Desa.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sambang.Dashboard.Master.Desa.Model.ModelDesaMaster
+import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.R
 import kotlinx.android.synthetic.main.list_desa_master.view.*
 import java.util.ArrayList
