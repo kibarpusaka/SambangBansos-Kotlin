@@ -13,8 +13,8 @@ class AddKeluargaPresenter(val addKeluargaView: AddKeluargaView)
 {
     fun addKeluarga(keluarga: ModelKeluarga)
     {
-        SambangUtils.service()
-            .addKeluarga(keluarga.id, keluarga.nomerkk.toString(), keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
+        SambangUtils.getservice()
+            .addKeluarga(keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(
@@ -40,8 +40,8 @@ class AddKeluargaPresenter(val addKeluargaView: AddKeluargaView)
 
     fun updateKeluarga(keluarga: ModelKeluarga)
     {
-        SambangUtils.service()
-            .updateKeluarga(keluarga.id, keluarga.nomerkk.toString(), keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
+        SambangUtils.getservice()
+            .updateKeluarga(keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(

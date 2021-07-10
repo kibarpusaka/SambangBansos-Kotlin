@@ -29,7 +29,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama" />
-
+            <TextView
+                android:id="@+id/textViewtmptlhir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tempat Lahir"
+                />
+            <TextView
+                android:id="@+id/textViewtgl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Lahir"
+                />
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
@@ -47,6 +58,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rw" />
+
+            <TextView
+                android:id="@+id/textView17a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nik Valid" />
+            <TextView
+                android:id="@+id/textView17b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desa" />
+            <TextView
+                android:id="@+id/textView17c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keluarga" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,6 +111,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=":" />
+            <TextView
+                android:id="@+id/textView22a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
+            <TextView
+                android:id="@+id/textView20b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
+            <TextView
+                android:id="@+id/textView20c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
+            <TextView
+                android:id="@+id/textView20e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
+            <TextView
+                android:id="@+id/textView20d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,35 +145,77 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_nik_check_nik_kependudukan"
+                android:id="@+id/tv_nik_checknik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1375026004890002" />
 
             <TextView
-                android:id="@+id/tv_nama_check_nik_kependudukan"
+                android:id="@+id/tv_nama_checknik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hamba Allah" />
+            <TextView
+                android:id="@+id/tv_tempat_checknik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brebes" />
+            <TextView
+                android:id="@+id/tv_tanggal_checknik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10-10-2021" />
 
             <TextView
-                android:id="@+id/tv_alamat_check_nik_kependudukan"
+                android:id="@+id/tv_alamat_checknik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Desa Neng Brebes" />
 
             <TextView
-                android:id="@+id/tv_rt_check_nik_kependudukan"
+                android:id="@+id/tv_rt_checknik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="00" />
 
             <TextView
-                android:id="@+id/tv_rw_check_nik_kependudukan"
+                android:id="@+id/tv_rw_checknik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="00" />
+
+            <TextView
+                android:id="@+id/tv_nikvalid_checknik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="true" />
+            <TextView
+                android:id="@+id/tv_desa_checknik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1" />
+            <TextView
+                android:id="@+id/tv_keluarga_checknik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1" />
         </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivMenuCheckNik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_more_black"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="75dp"
+                        android:layout_alignParentRight="true"/>
+                </LinearLayout>
 
     </LinearLayout>
 

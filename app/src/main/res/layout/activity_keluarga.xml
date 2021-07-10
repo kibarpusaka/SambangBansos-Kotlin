@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -56,7 +57,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_kluarga_kependudukan"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -66,6 +67,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:listitem="@layout/list_keluarga_kependudukan" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/constraintLayout"
+        tools:listitem="@layout/list_keluarga_kependudukan"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btAddDataKeluarga"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/high"
+        android:layout_marginLeft="@dimen/high"
+        android:layout_marginTop="@dimen/high"
+        android:layout_marginEnd="@dimen/high"
+        android:layout_marginRight="@dimen/high"
+        android:layout_marginBottom="@dimen/high"
+        android:clickable="true"
+        android:src="@drawable/ic_add_white"
+        app:backgroundTint="@color/blue_kom" />
+
+
+</RelativeLayout>

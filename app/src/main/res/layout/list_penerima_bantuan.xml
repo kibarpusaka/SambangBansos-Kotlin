@@ -22,31 +22,26 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No KK" />
+                android:text="Status" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Alamat" />
+                android:text="Tanggal Pengajuan" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rt" />
+                android:text="Bantuan" />
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rw" />
+                android:text="Keluarga" />
 
-            <TextView
-                android:id="@+id/textView8a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Desa" />
 
         </LinearLayout>
 
@@ -80,11 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text=":" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=":" />
+
 
         </LinearLayout>
 
@@ -95,34 +86,29 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_nokk_penerima_bantuan"
+                android:id="@+id/tv_status_penerima_bantuan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1375026004890002" />
 
             <TextView
-                android:id="@+id/tv_alamat_penerima_bantuan"
+                android:id="@+id/tv_tanggal_penerima_bantuan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Desa Neng Brebes" />
 
             <TextView
-                android:id="@+id/tv_rt_penerima_bantuan"
+                android:id="@+id/tv_bantuan_penerima_bantuan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="00" />
 
             <TextView
-                android:id="@+id/tv_rw_penerima_bantuan"
+                android:id="@+id/tv_keluarga_penerima_bantuan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="00" />
 
-            <TextView
-                android:id="@+id/tv_desa_penerima_bantuan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kaligangsa" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,23 +116,14 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:orientation="vertical">
-
             <ImageView
-                android:id="@+id/imv_edit_penerima_bantuan"
+                android:id="@+id/ivMenuPenerimaBantuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/ic_more_black"
                 android:layout_gravity="right"
-                app:srcCompat="@drawable/ic_baseline_edit_24"
-                tools:ignore="VectorDrawableCompat" />
-
-            <ImageView
-                android:id="@+id/imv_hapus_penerima_bantuan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_baseline_delete_24"
-                tools:ignore="VectorDrawableCompat" />
+                android:layout_marginTop="25dp"
+                android:layout_alignParentRight="true"/>
         </LinearLayout>
 
     </LinearLayout>

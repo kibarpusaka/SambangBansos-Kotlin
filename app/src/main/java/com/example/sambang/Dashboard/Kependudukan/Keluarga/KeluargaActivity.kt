@@ -4,33 +4,42 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Data.ModelPenerimaBantuan
 import com.example.sambang.Utils.Base
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Adapter.KeluargaAdapter
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ModelKeluarga
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter.DataKeluargaView
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter.KeluargaPresenter
 import com.example.sambang.R
+import kotlinx.android.synthetic.main.activity_desa_master.*
 import kotlinx.android.synthetic.main.activity_keluarga.*
 import kotlinx.android.synthetic.main.activity_tambah_keluarga.*
 import org.jetbrains.anko.alert
+import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class KeluargaActivity : Base(), DataKeluargaView
 {
 
-//    lateinit var adapterKeluarga: AdapterKeluarga
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keluarga)
 
-//        getKeluarga()
-//        setupAdapterKeluarga()
-
+        setActionButton()
         refreshKeluarga()
 
     }
+
+    private fun setActionButton() {
+        btAddDataKeluarga.onClick {
+            startActivity<AddKeluargaActivity>(TAGS.USER to user)
+        }
+    }
+
     private fun refreshKeluarga()
     {
         KeluargaPresenter(this).getDataKeluarga(user)
@@ -38,15 +47,15 @@ class KeluargaActivity : Base(), DataKeluargaView
 
     override fun onSuccessDataKeluarga(data: List<ModelKeluarga?>?)
     {
+        rv_kluarga_kependudukan.layoutManager = LinearLayoutManager(applicationContext)
         rv_kluarga_kependudukan.adapter = KeluargaAdapter(data, object : KeluargaAdapter.OnMenuClicked{
-            override fun click(menuItem: MenuItem, keluarga: ModelKeluarga)
-            {
-                when(menuItem.itemId)
-                {
+            override fun click(menuItem: MenuItem, keluarga: ModelKeluarga) {
+                when(menuItem.itemId){
                     R.id.editKeluarga -> editKeluarga(keluarga)
                     R.id.hapusKeluarga -> hapusKeluarga(keluarga)
                 }
             }
+
         })
     }
 
@@ -58,7 +67,7 @@ class KeluargaActivity : Base(), DataKeluargaView
     private fun editKeluarga(keluarga: ModelKeluarga)
     {
         val intent = Intent(this, AddKeluargaActivity::class.java)
-        intent.putExtra(TAGS.USER, user)
+        intent.putExtra(TAGS.USER, user )
         intent.putExtra(TAGS.KELUARGA, keluarga)
         startActivityForResult(intent,1)
     }
@@ -66,8 +75,8 @@ class KeluargaActivity : Base(), DataKeluargaView
     private fun hapusKeluarga(keluarga: ModelKeluarga)
     {
         alert {
-            title = "KOnfirmasi"
-            message = "Yakin akan Menghapus barang ${keluarga.nomerkk}"
+            title = "Konfirmasi"
+            message = "Yakin akan Menghapus  ${keluarga.nomerkk}"
 
             positiveButton("Hapus"){
                 KeluargaPresenter(this@KeluargaActivity).deleteKeluarga(user, keluarga)
@@ -80,7 +89,7 @@ class KeluargaActivity : Base(), DataKeluargaView
 
     override fun onSuccessDeleteKeluarga(msg: String?)
     {
-        toast(msg ?: "").show()
+        toast(msg ?: "Data Sudah Di Hapus").show()
         refreshKeluarga()
     }
 
@@ -89,33 +98,4 @@ class KeluargaActivity : Base(), DataKeluargaView
         toast(msg ?: "data sudah digunakan").show()
     }
 
-//    fun getKeluarga(){
-//        val keluarga = SambangUtils().getSambangClientInstance("http://192.168.1.17:1337/").create(ApiSambang::class.java)
-//        keluarga.getKeluarga().enqueue(object : Callback<List<ModelKeluarga>>{
-//            override fun onResponse(
-//                call: Call<List<ModelKeluarga>>,
-//                response: Response<List<ModelKeluarga>>
-//            ) {
-//                showDataKeluarga(response.body()!!)
-//            }
-//
-//            override fun onFailure(call: Call<List<ModelKeluarga>>, t: Throwable) {
-//                Log.e("Falied", t.message.toString())
-//            }
-//        })
-//    }
-//
-//    private fun showDataKeluarga(data: List<ModelKeluarga>){
-//        val keluargaD = data
-//        adapterKeluarga.setDataKeluarga(keluargaD)
-//
-//    }
-//
-//    fun setupAdapterKeluarga(){
-//        adapterKeluarga = AdapterKeluarga(arrayListOf())
-//        rv_kluarga_kependudukan.apply {
-//            layoutManager = LinearLayoutManager(applicationContext)
-//            adapter = adapterKeluarga
-//        }
-//    }
 }

@@ -8,20 +8,22 @@ import org.jetbrains.anko.toast
 open class Base : AppCompatActivity(){
     object TAGS{
         val KELUARGA = "keluarga"
+        val NIKAKTIF = "nikaktif"
         val USER = "user"
+        val PENERIMABANTUAN = "penerimaBantuan"
     }
 
     var user : ModelLogin? = null
 
     fun cekSesi(activity: Activity){
-//        val intent = intent.getSerializableExtra("user")
+        val intent = intent.getSerializableExtra("user")
 
-//        if (intent == null){
-//            activity.toast("anda belum login").show()
-//            activity.finish()
-//        } else {
-//            user = intent as ModelLogin
-//        }
+        if (intent == null){
+            activity.toast("anda belum login").show()
+            activity.finish()
+        } else {
+            user = intent as ModelLogin
+        }
 
     }
 }

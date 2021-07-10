@@ -1,21 +1,23 @@
 package com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter
 
-import com.example.sambang.Api.ApiSambang
-import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ModelKeluarga
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ResponKeluarga
 import com.example.sambang.Login.Data.ModelLogin
 import com.example.sambang.Utils.ResultSimple
 import com.example.sambang.Api.SambangUtils
+import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ModelKeluarga
+import com.example.sambang.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class KeluargaPresenter(val dataKeluargaView: DataKeluargaView)
 {
+
     fun getDataKeluarga(user: ModelLogin?)
     {
-        SambangUtils.service()
-            .getKeluarga(user?.user_id)
+        val sessionManager : SessionManager? = null
+        SambangUtils.getservice()
+            .getKeluarga(token = "token ${sessionManager?.fetchAuthToken()}")
             .enqueue(object : Callback<ResponKeluarga>
             {
                 override fun onResponse(
@@ -40,10 +42,10 @@ class KeluargaPresenter(val dataKeluargaView: DataKeluargaView)
             })
     }
 
-    fun deleteKeluarga(user: ModelLogin?, keluarga: ModelKeluarga?)
+    fun deleteKeluarga(user: ModelLogin?, keluarga: ModelKeluarga)
     {
-        SambangUtils.service()
-            .deleteKeluarga(user?.user_id, Integer.parseInt(keluarga?.id.toString()),keluarga?.nomerkk)
+        SambangUtils.getservice()
+            .deleteKeluarga(keluarga.id)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(

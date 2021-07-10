@@ -4,13 +4,15 @@ import com.example.sambang.Login.Data.ResponLogin
 import com.example.sambang.Login.LoginView
 import com.example.sambang.Api.SambangUtils
 import com.example.sambang.Login.Data.ModelLogin
+import com.example.sambang.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginPresenter(val loginView: LoginView) {
+
     fun login(user : ModelLogin){
-        SambangUtils.service()
+        SambangUtils.getservice()
             .loginUser(user.username, user.password)
             .enqueue(object : Callback<ResponLogin>{
                 override fun onResponse(call: Call<ResponLogin>, response: Response<ResponLogin>) {

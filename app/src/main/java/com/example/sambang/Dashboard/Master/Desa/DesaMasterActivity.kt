@@ -1,62 +1,54 @@
 package com.example.sambang.Dashboard.Master.Desa
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sambang.Api.ApiSambang
 import com.example.sambang.Dashboard.Master.Desa.Adapter.AdapterDesa
-import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.R
-import com.example.sambang.Api.SambangUtils
+import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
+import com.example.sambang.Dashboard.Master.Desa.Presenter.DataDesaView
+import com.example.sambang.Dashboard.Master.Desa.Presenter.DesaPresenter
+import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_desa_master.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class DesaMasterActivity : AppCompatActivity() {
-
-    lateinit var desaAdapter: AdapterDesa
-
+class DesaMasterActivity : Base(), DataDesaView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desa_master)
 
-        getDesa()
-        SetUpAdapter()
+        refreshDataDesa()
 
     }
 
-    fun getDesa() {
-        val desa = SambangUtils.service()
-        desa.getDesa().enqueue(object : Callback<List<ModelDesaMaster>>{
-            override fun onResponse(
-                call: Call<List<ModelDesaMaster>>,
-                response: Response<List<ModelDesaMaster>>
-            ) {
-                showData(response.body()!!)
-            }
+    private fun refreshDataDesa() {
+        DesaPresenter(this).getDataDesa(user)
+    }
 
-            override fun onFailure(call: Call<List<ModelDesaMaster>>, t: Throwable) {
-                Log.e("Failed", t.message.toString())
+    override fun onSuccessDataDesa(data: List<ModelDesaMaster?>?) {
+        rv_desa_master.layoutManager = LinearLayoutManager(applicationContext)
+        rv_desa_master.adapter = AdapterDesa(data)
+
+        search_desa_master.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                search_desa_master.clearFocus()
+                if (data?.contains(query) == true){
+
+                }
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
             }
 
         })
 
     }
 
-
-    private fun showData(data: List<ModelDesaMaster>){
-        val results = data
-        desaAdapter.setData(results)
+    override fun onErrorDataDesa(msg: String?) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
-    fun SetUpAdapter() {
-        desaAdapter = AdapterDesa(arrayListOf())
-        rv_desa_master.apply {
-            layoutManager = LinearLayoutManager(applicationContext)
-            adapter = desaAdapter
-        }
-    }
 
 }

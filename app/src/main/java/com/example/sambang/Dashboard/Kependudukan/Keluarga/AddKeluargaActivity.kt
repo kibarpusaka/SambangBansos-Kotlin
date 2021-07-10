@@ -31,7 +31,7 @@ class AddKeluargaActivity : Base(), AddKeluargaView
         btn_create_keluarga.text = "Simpan"
 
         val keluarga = serializable as ModelKeluarga
-        et_keluarga_nokk.setText(keluarga.nomerkk.toString())
+        et_keluarga_nokk.setText(keluarga.nomerkk)
         et_keluarga_alamat.setText(keluarga.alamat)
         et_keluarga_rt.setText(keluarga.rt.toString())
         et_keluarga_rw.setText(keluarga.rw.toString())

@@ -1,34 +1,37 @@
 package com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter
 
-import com.example.sambang.Api.ApiSambang
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ResponNikAktif
 import com.example.sambang.Login.Data.ModelLogin
 import com.example.sambang.Utils.ResultSimple
 import com.example.sambang.Api.SambangUtils
+import com.example.sambang.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class NikAktifPresenter(val dataNikAktifView: DataNikAktifView)
 {
-    fun getNikAktif(user : ModelLogin)
+    fun getNikAktif(user: ModelLogin?)
     {
-        SambangUtils.service()
-            .getNikAktif(user.user_id)
+        val sessionManager : SessionManager? = null
+        SambangUtils.getservice()
+            .getNikAktif(token = "token ${sessionManager?.fetchAuthToken()}")
             .enqueue(object : Callback<ResponNikAktif>
             {
                 override fun onResponse(
                     call: Call<ResponNikAktif>,
                     response: Response<ResponNikAktif>
                 ) {
-                    val bodyNikAktif = response.body()
-                    if (bodyNikAktif?.status == true)
+
+                    val body = response.body()
+                    if (body?.status == true)
                     {
-                        dataNikAktifView.onSuccessDataNikAktif(bodyNikAktif.nikaktif)
+                        val filtered = body.data_warga?.filter { w -> w.nikvalid == true }
+                        dataNikAktifView.onSuccessDataNikAktif(filtered)
                     } else
                     {
-                        dataNikAktifView.onErrorDataNikAktif(bodyNikAktif?.message)
+                        dataNikAktifView.onErrorDataNikAktif(body?.message)
                     }
                 }
 
@@ -39,10 +42,10 @@ class NikAktifPresenter(val dataNikAktifView: DataNikAktifView)
             })
     }
 
-    fun deleteNikAktif(user: ModelLogin, nikAktif: ModelNikAktif)
+    fun deleteNikAktif(user: ModelLogin?, nikAktif: ModelNikAktif?)
     {
-        SambangUtils.service()
-            .deleteNikAktif(user.user_id, Integer.parseInt(nikAktif.id.toString()), nikAktif.nik)
+        SambangUtils.getservice()
+            .deleteNikAktif(nikAktif?.id)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(

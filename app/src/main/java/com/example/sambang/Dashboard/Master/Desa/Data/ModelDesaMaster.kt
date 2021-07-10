@@ -2,22 +2,18 @@ package com.example.sambang.Dashboard.Master.Desa.Data
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class ModelDesaMaster {
-    @SerializedName("id")
-    @Expose
-    var id : Int? = null
+data class ModelDesaMaster (
+    @field:SerializedName("id")
+    var id : Int? = null,
 
-    @SerializedName("Nama")
-    @Expose
-    var nama : String? = null
+    @field:SerializedName("Nama")
+    var nama : String? = null,
 
-    @SerializedName("Kode")
-    @Expose
-    var kode : Int? = null
+    @field:SerializedName("Kode")
+    var kode : String? = null,
 
-    @SerializedName("Kecamatan")
-    @Expose
+    @field:SerializedName("Kecamatan")
     var kecamatan : Int? = null
-
-}
+) : Serializable

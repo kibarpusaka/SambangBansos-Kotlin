@@ -7,33 +7,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.R
 import kotlinx.android.synthetic.main.list_desa_master.view.*
-import java.util.ArrayList
 
-class AdapterDesa(val results : ArrayList<ModelDesaMaster>)
-    : RecyclerView.Adapter<AdapterDesa.ViewHolder>() {
+class AdapterDesa(val desa: List<ModelDesaMaster?>?) : RecyclerView.Adapter<AdapterDesa.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder (
-        LayoutInflater.from(parent.context).inflate(R.layout.list_desa_master, parent, false)
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_desa_master, parent, false)
+        return ViewHolder(v)
+    }
+
+    override fun getItemCount() : Int = desa?.size ?:0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val desa = results[position]
-        holder.view.tv_desa_master.text = desa.nama.toString()
-        holder.view.tv_desa_kode_master.text = desa.kode.toString()
-        holder.view.tv_desa_kode_kecamatan.text = desa.kecamatan.toString()
+        holder.bind(desa?.get(position))
     }
 
-    override fun getItemCount() = results.size
-
-    class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)
-
-
-    fun setData(data: List<ModelDesaMaster>) {
-        results.clear()
-        results.addAll( data )
-        notifyDataSetChanged()
+    class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(desa: ModelDesaMaster?){
+            itemView.tv_desa_master.text = desa?.nama
+            itemView.tv_desa_kode_master.text = desa?.kode.toString()
+            itemView.tv_desa_kode_kecamatan.text = desa?.kecamatan.toString()
+        }
     }
-
-
 
 }

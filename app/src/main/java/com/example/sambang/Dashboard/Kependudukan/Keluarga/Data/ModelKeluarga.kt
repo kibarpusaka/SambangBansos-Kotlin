@@ -28,5 +28,6 @@ data class ModelKeluarga (
 
     @SerializedName("Desa")
     @Expose
-    var desa : Int? = null
+    var desa : Int? = null,
+
 ) : Serializable

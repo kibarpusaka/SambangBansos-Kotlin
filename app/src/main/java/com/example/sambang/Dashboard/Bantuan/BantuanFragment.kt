@@ -49,10 +49,10 @@ class BantuanFragment : Fragment() {
             startActivity(penerimaBantuan)
         }
 
-        cv_pencarian_data_bantuan.setOnClickListener {
-            val pencarianpenerima = Intent (this@BantuanFragment.context, PencarianDataBantuanActivity::class.java)
-            startActivity(pencarianpenerima)
-        }
+//        cv_pencarian_data_bantuan.setOnClickListener {
+//            val pencarianpenerima = Intent (this@BantuanFragment.context, PencarianDataBantuanActivity::class.java)
+//            startActivity(pencarianpenerima)
+//        }
 
     }
 

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_kom"
     android:orientation="vertical"
-    android:background="#4169E1"
     tools:context=".Dashboard.Kependudukan.Keluarga.AddKeluargaActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -26,10 +25,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/im_icon_spalsh"
@@ -51,14 +49,14 @@
             android:src="@drawable/ic_circle_ic" />
     </LinearLayout>
 
-
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,96 +64,93 @@
             android:layout_marginLeft="30dp"
             android:text="Masukan Nomer KK"
             android:textSize="18dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_keluarga_nokk"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
+            android:padding="10dp"
             android:layout_marginTop="5dp"
-            />
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:text="Masukan Alamat"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_keluarga_alamat"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
             android:layout_marginTop="5dp"
-            />
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:text="Masukan Rt"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_keluarga_rt"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
             android:layout_marginTop="5dp"
-            />
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:text="Masukan Rw"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_keluarga_rw"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
             android:layout_marginTop="5dp"
-            />
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:text="Masukan Desa"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_keluarga_desa"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
             android:layout_marginTop="5dp"
-            />
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white" />
 
         <Button
             android:id="@+id/btn_create_keluarga"
@@ -166,8 +161,8 @@
             android:background="@drawable/custum_search"
             android:backgroundTint="@color/white"
             android:text="Tambah Data"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
+</ScrollView>
 
 </LinearLayout>

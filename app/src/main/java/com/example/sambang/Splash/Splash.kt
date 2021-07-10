@@ -9,7 +9,7 @@ import com.example.sambang.MainActivity
 import com.example.sambang.R
 
 class Splash : AppCompatActivity() {
-    private val SPLASH_TIME : Long = 3000
+    private val SPLASH_TIME : Long = 700
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

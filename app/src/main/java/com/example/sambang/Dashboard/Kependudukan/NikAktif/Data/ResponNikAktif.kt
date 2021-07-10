@@ -10,7 +10,7 @@ data class ResponNikAktif(
     @field:SerializedName("message")
     val message: String? = null,
 
-    @field:SerializedName("nikaktif")
-    val nikaktif: List<ModelNikAktif>? = null
+    @field:SerializedName("data_warga")
+    val data_warga: List<ModelNikAktif>? = null
 
 )

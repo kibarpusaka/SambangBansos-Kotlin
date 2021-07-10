@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SAMBANG"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Dashboard.Kependudukan.NikAktif.AddNikAktifActivity"></activity>
+        <activity android:name=".Dashboard.Report.ReportPenerima.Presenter.ReportPenerimaActivity"></activity>
+        <activity android:name=".Dashboard.Report.ReportPenerima.ReportPenerimaActivity" />
+        <activity android:name=".Dashboard.Bantuan.PenerimaBantuan.AddPenerimaBantuanActivity" />
+        <activity android:name=".Dashboard.Kependudukan.Keluarga.DetailKeluargaActivity" />
+        <activity android:name=".Dashboard.Kependudukan.Keluarga.DetailActivity" />
+        <activity android:name=".Dashboard.Kependudukan.NikAktif.AddNikAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.Keluarga.AddKeluargaActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikNonAktif.NikNonAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikAktif.NikAktifActivity" />
