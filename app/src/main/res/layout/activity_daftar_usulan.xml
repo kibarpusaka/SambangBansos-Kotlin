@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard.Usulan.DaftarUsulan.DaftarUsulanActivity">
+    tools:context=".ui.list_of_propsal.ListOfProposalActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -52,6 +52,15 @@
             tools:ignore="NewApi" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        style="@style/Widget.MaterialComponents.LinearProgressIndicator"
+        android:indeterminate="false"
+        android:id="@+id/loading_bar"
+        app:layout_constraintBottom_toTopOf="@id/rv_daftar_usulan"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_daftar_usulan"

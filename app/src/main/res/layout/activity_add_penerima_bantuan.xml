@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/blue_kom"
-    tools:context=".Dashboard.Bantuan.PenerimaBantuan.AddPenerimaBantuanActivity">
+    tools:context=".ui.add_or_edit_beneficiary.CreateOrUpdateBeneficiaryActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_addPenerimaBantuan"

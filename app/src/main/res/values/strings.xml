@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="validator_username">Username tidak valid</string>
+    <string name="validator_password">Password tidak valid</string>
+    <string name="validator_status">Status tidak valid</string>
+    <string name="validator_date_proposed">Tanggal pengajuan tidak valid</string>
+    <string name="validator_support">Bantuan tidak valid</string>
+    <string name="validator_family">Keluarga tidak vlid</string>
 </resources>

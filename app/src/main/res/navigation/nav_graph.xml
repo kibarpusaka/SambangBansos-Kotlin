@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/nav_usulan"
-        android:name="com.example.sambang.Dashboard.Usulan.UsulanFragment"
+        android:name="com.example.sambang.ui.main.proposal.ProposalFragment"
         android:label="Usulan"
         tools:layout="@layout/fragment_usulan" />
     <fragment
         android:id="@+id/nav_data_bantuan"
-        android:name="com.example.sambang.Dashboard.Bantuan.BantuanFragment"
+        android:name="com.example.sambang.ui.main.support.SupportFragment"
         android:label="Data Bantuan"
         tools:layout="@layout/fragment_bantuan" />
     <fragment
         android:id="@+id/nav_kependudukan"
-        android:name="com.example.sambang.Dashboard.Kependudukan.KependudukanFragment"
+        android:name="com.example.sambang.ui.main.citizenship.CitizenShipFragment"
         android:label="Kependudukan"
         tools:layout="@layout/fragment_kependudukan" />
     <fragment

@@ -11,11 +11,12 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".ui.App"
         android:theme="@style/Theme.SAMBANG"
         android:usesCleartextTraffic="true">
         <activity android:name=".Dashboard.Report.ReportPenerima.Presenter.ReportPenerimaActivity"></activity>
         <activity android:name=".Dashboard.Report.ReportPenerima.ReportPenerimaActivity" />
-        <activity android:name=".Dashboard.Bantuan.PenerimaBantuan.AddPenerimaBantuanActivity" />
+        <activity android:name=".ui.add_or_edit_beneficiary.CreateOrUpdateBeneficiaryActivity" />
         <activity android:name=".Dashboard.Kependudukan.Keluarga.DetailKeluargaActivity" />
         <activity android:name=".Dashboard.Kependudukan.Keluarga.DetailActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikAktif.AddNikAktifActivity" />
@@ -23,17 +24,17 @@
         <activity android:name=".Dashboard.Kependudukan.NikNonAktif.NikNonAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.NikAktif.NikAktifActivity" />
         <activity android:name=".Dashboard.Kependudukan.Keluarga.KeluargaActivity" />
-        <activity android:name=".Dashboard.Bantuan.PenerimaBantuan.PenerimaBantuanActivity" />
-        <activity android:name=".Dashboard.Bantuan.Pencarian.PencarianDataBantuanActivity" />
-        <activity android:name=".Dashboard.Usulan.DaftarUsulan.DaftarUsulanActivity" />
+        <activity android:name=".ui.beneficiary.BeneficiaryActivity" />
+        <activity android:name=".ui.search_support.PencarianDataBantuanActivity" />
+        <activity android:name=".ui.list_of_propsal.ListOfProposalActivity" />
         <activity android:name=".Dashboard.Master.Kecamatan.KecamatanMasterActivity" />
         <activity android:name=".Dashboard.Master.Desa.DesaMasterActivity" />
         <activity android:name=".Dashboard.Master.Bantuan.BantuanMasterActivity" />
         <activity android:name=".Dashboard.Kependudukan.CheckNIK.CheckNikActivity" />
-        <activity android:name=".Dashboard.Usulan.Pengajuan.PengajuanActivity" />
-        <activity android:name=".Login.Login" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Splash.Splash">
+        <activity android:name=".ui.propose.PengajuanActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
