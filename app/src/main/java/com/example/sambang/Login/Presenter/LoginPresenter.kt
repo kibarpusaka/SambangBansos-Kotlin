@@ -18,7 +18,7 @@ class LoginPresenter(val loginView: LoginView) {
                 override fun onResponse(call: Call<ResponLogin>, response: Response<ResponLogin>) {
                     val body = response.body()
                     if (body?.status == true){
-                        loginView.onSuccessLogin(body.user)
+                        loginView.onSuccessLogin(body.token, body.user)
                     }else {
                         loginView.onErrorLogin(body?.message)
                     }

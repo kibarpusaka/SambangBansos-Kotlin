@@ -16,7 +16,7 @@ open class Base : AppCompatActivity(){
     var user : ModelLogin? = null
 
     fun cekSesi(activity: Activity){
-        val intent = intent.getSerializableExtra("user")
+        val intent = intent.getSerializableExtra("user_data")
 
         if (intent == null){
             activity.toast("anda belum login").show()

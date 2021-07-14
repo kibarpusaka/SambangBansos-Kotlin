@@ -4,6 +4,6 @@ import com.example.sambang.Login.Data.ModelLogin
 
 interface LoginView {
 
-    fun onSuccessLogin(user: ModelLogin)
+    fun onSuccessLogin(token: String, user: ModelLogin)
     fun onErrorLogin(msg: String?)
 }

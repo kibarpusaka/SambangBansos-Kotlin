@@ -46,11 +46,12 @@ class Login : AppCompatActivity(), LoginView  {
         }
     }
 
-    override fun onSuccessLogin(user: ModelLogin) {
-
+    override fun onSuccessLogin(token: String, user: ModelLogin) {
         toast("Berhasil login").show()
-        sessionManager.saveAuthToken(token = null)
+        sessionManager.saveUserData(user)
+        sessionManager.saveAuthToken(token)
         startActivity<MainActivity>(Base.TAGS.USER to user)
+        finish()
 //        startActivity<MainActivity>()
     }
 

@@ -12,18 +12,20 @@ import com.example.sambang.Login.Login
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_header.*
+import kotlinx.android.synthetic.main.navigation_header.view.*
+import org.jetbrains.anko.toast
 
-class MainActivity : Base()  {
+class MainActivity : AppCompatActivity()  {
 
     private val TAG = MainActivity::class.java.simpleName
+    private lateinit var sessionManager : SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        cekSesi(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 //        tv_nama_profile.text = "User\n${user?.username}"
-
+        sessionManager = SessionManager(this)
         setSupportActionBar(toolbar)
 
         val navController = Navigation.findNavController(this, R.id.fragment_container)
@@ -33,6 +35,44 @@ class MainActivity : Base()  {
         val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+
+        setupDrawerView()
+    }
+
+    private fun setupDrawerView(){
+        val user = sessionManager.getUserData()
+        user?.let { u ->
+            nav_view.getHeaderView(0).tv_nama_profile.text = u.username
+            nav_view.getHeaderView(0).im_log_out_profile.setOnClickListener {
+                doLogout()
+            }
+        }
+
+        //        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
+//        val headerView: View = navigationView.getHeaderView(0)
+//        headerView.findViewById(R.id.navUsername).text = "Your Text Here"
+    }
+
+    private fun doLogout(){
+        sessionManager.signOut()
+        goToLoginActivity()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (!isLoggedIn()){
+            goToLoginActivity()
+        }
+    }
+
+    private fun goToLoginActivity(){
+        startActivity(Intent(this@MainActivity, Login::class.java))
+        finish()
+    }
+
+    private fun isLoggedIn() : Boolean {
+        val temp = sessionManager.getUserToken()
+        return temp.isNotEmpty()
     }
 
     override fun onBackPressed() {

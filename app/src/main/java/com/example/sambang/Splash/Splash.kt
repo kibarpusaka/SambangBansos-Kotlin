@@ -15,7 +15,7 @@ class Splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         @Suppress("DEPRECATION")
         Handler().postDelayed({
-            startActivity(Intent(this, Login::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, SPLASH_TIME
 
