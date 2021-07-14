@@ -23,7 +23,7 @@ object SambangUtils {
     fun getservice(): ApiSambang {
         if (!::service.isInitialized) {
            val retrofit = Retrofit.Builder()
-                .baseUrl("http://42579faba702.ngrok.io")
+                .baseUrl("http://98a039e99ef6.ngrok.io")
                 .client(getInterceptor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

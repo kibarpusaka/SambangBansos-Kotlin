@@ -12,15 +12,17 @@ import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_bantuan_master.*
 
 class BantuanMasterActivity : Base(), DataBantuanView {
+    private lateinit var presenter: BantuanMasterPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bantuan_master)
+        presenter = BantuanMasterPresenter(this)
 
         refreshBantuan()
     }
 
     private fun refreshBantuan() {
-        BantuanMasterPresenter(this).getBantuan(user)
+        presenter.getBantuan(user)
     }
 
     override fun onSuccessDataBantuan(data: List<ModelBantuanMaster?>?) {

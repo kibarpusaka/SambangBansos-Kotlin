@@ -3,6 +3,7 @@ package com.example.sambang.Dashboard.Kependudukan.Keluarga
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Data.ModelPenerimaBantuan
@@ -22,12 +23,15 @@ import org.jetbrains.anko.toast
 
 class KeluargaActivity : Base(), DataKeluargaView
 {
+    private lateinit var presenter: KeluargaPresenter
 
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keluarga)
+
+        presenter = KeluargaPresenter(this)
 
         setActionButton()
         refreshKeluarga()
@@ -38,11 +42,31 @@ class KeluargaActivity : Base(), DataKeluargaView
         btAddDataKeluarga.onClick {
             startActivity<AddKeluargaActivity>(TAGS.USER to user)
         }
+
+        in_search_keluarga_kependudukan.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                in_search_keluarga_kependudukan.clearFocus()
+                if (!query.isNullOrEmpty()){
+                    presenter.filterData(query.toString().trim())
+                    return true
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null && newText.toString().trim().isEmpty()){
+                    presenter.showDataKeluarga()
+                    return true
+                }
+                return false
+            }
+
+        })
     }
 
     private fun refreshKeluarga()
     {
-        KeluargaPresenter(this).getDataKeluarga(user)
+        presenter.getDataKeluarga(user)
     }
 
     override fun onSuccessDataKeluarga(data: List<ModelKeluarga?>?)

@@ -29,7 +29,7 @@
             app:title="Kecamatan"
             app:titleTextColor="#FFFFFF" />
 
-        <EditText
+        <SearchView
             android:id="@+id/in_search_kecamatan_master"
             android:layout_width="0dp"
             android:layout_height="50dp"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:background="@color/blue_kom"
@@ -32,16 +31,16 @@
         app:layout_constraintStart_toStartOf="@+id/iv_profile"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
-    <ImageView
-        android:id="@+id/im_setting_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/ic_setting"
-        app:layout_constraintBottom_toBottomOf="@+id/im_email_profile"
-        app:layout_constraintEnd_toStartOf="@+id/im_email_profile"
-        app:layout_constraintTop_toTopOf="@+id/im_email_profile" />
+<!--    <ImageView-->
+<!--        android:id="@+id/im_setting_profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:src="@drawable/ic_setting"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/im_email_profile"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/im_email_profile"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/im_email_profile" />-->
 
     <ImageView
         android:id="@+id/im_log_out_profile"
@@ -50,18 +49,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:src="@drawable/ic_baseline_logout_24"
-        app:layout_constraintBottom_toBottomOf="@+id/im_email_profile"
-        app:layout_constraintStart_toEndOf="@+id/im_email_profile"
-        app:layout_constraintTop_toTopOf="@+id/im_email_profile" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_nama_profile"
+        app:layout_constraintStart_toEndOf="@+id/tv_nama_profile"
+        app:layout_constraintTop_toTopOf="@+id/tv_nama_profile" />
 
-    <ImageView
-        android:id="@+id/im_email_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/ic_email"
-        app:layout_constraintEnd_toEndOf="@+id/tv_nama_profile"
-        app:layout_constraintStart_toStartOf="@+id/tv_nama_profile"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nama_profile" />
+<!--    <ImageView-->
+<!--        android:id="@+id/im_email_profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@drawable/ic_email"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tv_nama_profile"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tv_nama_profile"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_nama_profile" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

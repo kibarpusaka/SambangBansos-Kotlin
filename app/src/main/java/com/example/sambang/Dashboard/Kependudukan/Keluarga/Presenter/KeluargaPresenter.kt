@@ -12,7 +12,16 @@ import retrofit2.Response
 
 class KeluargaPresenter(val dataKeluargaView: DataKeluargaView)
 {
+    private val keluarga = mutableListOf<ModelKeluarga>()
 
+    fun showDataKeluarga(){
+        dataKeluargaView.onSuccessDataKeluarga(keluarga)
+    }
+
+    fun filterData(q : String){
+        val filterd = keluarga.filter { v -> v.nomerkk!!.toLowerCase().contains(q.toLowerCase())}
+        dataKeluargaView.onSuccessDataKeluarga(filterd)
+    }
     fun getDataKeluarga(user: ModelLogin?)
     {
         val sessionManager : SessionManager? = null
@@ -28,6 +37,8 @@ class KeluargaPresenter(val dataKeluargaView: DataKeluargaView)
                     val body = response.body()
                     if (body?.status == true)
                     {
+                        keluarga.clear()
+                        keluarga.addAll(body.data_keluarga!!)
                         dataKeluargaView.onSuccessDataKeluarga(body.data_keluarga)
                     } else
                     {
