@@ -6,7 +6,7 @@ import com.example.sambang.Login.Data.ModelLogin
 import com.example.sambang.Login.Presenter.LoginPresenter
 import com.example.sambang.MainActivity
 import com.example.sambang.R
-import com.example.sambang.SessionManager
+import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -15,6 +15,7 @@ import org.jetbrains.anko.toast
 
 class Login : AppCompatActivity(), LoginView  {
     private lateinit var sessionManager: SessionManager
+    private lateinit var presenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class Login : AppCompatActivity(), LoginView  {
 
         loginAction()
         sessionManager = SessionManager(this)
+        presenter = LoginPresenter(this)
 
     }
 
@@ -42,7 +44,7 @@ class Login : AppCompatActivity(), LoginView  {
                 return@onClick
             }
 
-            LoginPresenter(this@Login).login(user)
+            presenter.login(user)
         }
     }
 

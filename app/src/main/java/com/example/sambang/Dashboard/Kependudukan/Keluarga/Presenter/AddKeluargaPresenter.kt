@@ -1,6 +1,5 @@
 package com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter
 
-import com.example.sambang.Api.ApiSambang
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.AddKeluargaView
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ModelKeluarga
 import com.example.sambang.Utils.ResultSimple
@@ -11,10 +10,10 @@ import retrofit2.Response
 
 class AddKeluargaPresenter(val addKeluargaView: AddKeluargaView)
 {
-    fun addKeluarga(keluarga: ModelKeluarga)
+    fun addKeluarga(token : String,keluarga: ModelKeluarga)
     {
         SambangUtils.getservice()
-            .addKeluarga(keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
+            .addKeluarga(token = "Token ${token}",keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(
@@ -38,10 +37,10 @@ class AddKeluargaPresenter(val addKeluargaView: AddKeluargaView)
             })
     }
 
-    fun updateKeluarga(keluarga: ModelKeluarga)
+    fun updateKeluarga(token: String,keluarga: ModelKeluarga)
     {
         SambangUtils.getservice()
-            .updateKeluarga(keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
+            .updateKeluarga(token = "Token ${token}",keluarga.id, keluarga.nomerkk, keluarga.alamat, keluarga.rt, keluarga.rw, keluarga.desa)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(

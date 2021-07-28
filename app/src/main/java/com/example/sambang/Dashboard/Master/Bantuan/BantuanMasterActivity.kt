@@ -8,21 +8,24 @@ import com.example.sambang.Dashboard.Master.Bantuan.Data.ModelBantuanMaster
 import com.example.sambang.Dashboard.Master.Bantuan.Presenter.BantuanMasterPresenter
 import com.example.sambang.Dashboard.Master.Bantuan.Presenter.DataBantuanView
 import com.example.sambang.R
+import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_bantuan_master.*
 
 class BantuanMasterActivity : Base(), DataBantuanView {
     private lateinit var presenter: BantuanMasterPresenter
+    private lateinit var sessionManager: SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bantuan_master)
         presenter = BantuanMasterPresenter(this)
+        sessionManager = SessionManager(this)
 
         refreshBantuan()
     }
 
     private fun refreshBantuan() {
-        presenter.getBantuan(user)
+        presenter.getBantuan(sessionManager.getUserToken())
     }
 
     override fun onSuccessDataBantuan(data: List<ModelBantuanMaster?>?) {

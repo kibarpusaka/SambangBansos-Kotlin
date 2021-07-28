@@ -3,6 +3,7 @@ package com.example.sambang.Dashboard.Kependudukan.NikAktif
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.AddKeluargaActivity
@@ -11,6 +12,7 @@ import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.DataNikAktifView
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.NikAktifPresenter
 import com.example.sambang.R
+import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_nik_aktif.*
 import org.jetbrains.anko.alert
@@ -19,22 +21,49 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class NikAktifActivity : Base(), DataNikAktifView {
+    private lateinit var presenter: NikAktifPresenter
+    private lateinit var sessionManager: SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nik_aktif)
+        presenter = NikAktifPresenter(this)
+        sessionManager = SessionManager(this)
 
-//        setActionButton()
+        setActionButton()
         refreshNikAktif()
+        searcListener()
     }
 
-//    private fun setActionButton() {
-//        btAddDataNikAktif.onClick {
-//            startActivity<AddNikAktifActivity>(TAGS.USER to user)
-//        }
-//    }
-
+    private fun setActionButton() {
+        btn_create_nikaktif.setOnClickListener {
+            val intent = Intent(this@NikAktifActivity, AddNikAktifActivity::class.java)
+            startActivity(intent)
+        }
+    }
     private fun refreshNikAktif() {
-        NikAktifPresenter(this).getNikAktif(user)
+        presenter.getDataDesa(sessionManager.getUserToken())
+        presenter.getDataKeluarga(sessionManager.getUserToken())
+    }
+
+    private fun searcListener(){
+        in_search_nik_aktif.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                in_search_nik_aktif.clearFocus()
+                if (!query.isNullOrEmpty()){
+                    presenter.filterData(query.toString().trim())
+                    return true
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null && newText.toString().trim().isEmpty()) {
+                    presenter.showDataNikAktif()
+                    return true
+                }
+                return false
+            }
+        })
     }
 
     override fun onSuccessDataNikAktif(data: List<ModelNikAktif?>?) {

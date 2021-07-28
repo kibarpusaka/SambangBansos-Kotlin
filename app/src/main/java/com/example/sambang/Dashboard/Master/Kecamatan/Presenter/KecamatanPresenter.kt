@@ -4,7 +4,7 @@ import com.example.sambang.Api.SambangUtils
 import com.example.sambang.Dashboard.Master.Kecamatan.Data.ModelKecamatanMaster
 import com.example.sambang.Dashboard.Master.Kecamatan.Data.ResponKecamatan
 import com.example.sambang.Login.Data.ModelLogin
-import com.example.sambang.SessionManager
+import com.example.sambang.SharedPref.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,10 +22,9 @@ class KecamatanPresenter(val dataKecamatanView: DataKecamatanView) {
     }
 
 
-    fun getDataKecamatan(user: ModelLogin?){
-        val sessionManager : SessionManager? = null
+    fun getDataKecamatan(token : String){
         SambangUtils.getservice()
-            .getKecamatan(token = "token ${sessionManager?.fetchAuthToken()}")
+            .getKecamatan(token = "Token ${token}")
             .enqueue(object : Callback<ResponKecamatan>{
                 override fun onResponse(
                     call: Call<ResponKecamatan>,

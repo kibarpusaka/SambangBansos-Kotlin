@@ -4,7 +4,7 @@ import com.example.sambang.Api.SambangUtils
 import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.Dashboard.Master.Desa.Data.ResponDesa
 import com.example.sambang.Login.Data.ModelLogin
-import com.example.sambang.SessionManager
+import com.example.sambang.SharedPref.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,10 +21,9 @@ class DesaPresenter(val dataDesaView: DataDesaView) {
         dataDesaView.onSuccessDataDesa(filtered)
     }
 
-    fun getDataDesa(user : ModelLogin?){
-        val sessionManager : SessionManager? = null
+    fun getDataDesa(token : String){
         SambangUtils.getservice()
-            .getDesa(token = "token ${sessionManager?.fetchAuthToken()}")
+            .getDesa(token = "Token ${token}")
             .enqueue(object : Callback<ResponDesa>{
                 override fun onResponse(call: Call<ResponDesa>, response: Response<ResponDesa>) {
                     val body = response.body()

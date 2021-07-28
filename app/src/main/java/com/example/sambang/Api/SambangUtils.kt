@@ -1,29 +1,18 @@
 package com.example.sambang.Api
 
-import com.google.gson.GsonBuilder
+import com.example.sambang.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.jetbrains.anko.internals.AnkoInternals.createAnkoContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object SambangUtils {
 
-    fun getInterceptor(): OkHttpClient {
-
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
-
-        return OkHttpClient().newBuilder()
-            .addInterceptor(interceptor)
-            .build()
-    }
-    private lateinit var service: ApiSambang
-
+    private lateinit var service : ApiSambang
     fun getservice(): ApiSambang {
         if (!::service.isInitialized) {
            val retrofit = Retrofit.Builder()
-                .baseUrl("http://98a039e99ef6.ngrok.io")
+                .baseUrl(BuildConfig.BASE_URL)
                 .client(getInterceptor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -32,5 +21,13 @@ object SambangUtils {
         }
         return service
     }
+    fun getInterceptor(): OkHttpClient {
 
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+        return OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .build()
+    }
 }

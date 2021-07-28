@@ -3,16 +3,15 @@ package com.example.sambang.Dashboard.Master.Bantuan.Presenter
 import com.example.sambang.Api.SambangUtils
 import com.example.sambang.Dashboard.Master.Bantuan.Data.ResponBantuanMaster
 import com.example.sambang.Login.Data.ModelLogin
-import com.example.sambang.SessionManager
+import com.example.sambang.SharedPref.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class BantuanMasterPresenter(val dataBantuanView: DataBantuanView) {
-    fun getBantuan(user: ModelLogin?){
-        val sessionManager : SessionManager? = null
+    fun getBantuan(token : String){
         SambangUtils.getservice()
-            .getBantuan(token = "token ${sessionManager?.fetchAuthToken()}")
+            .getBantuan(token = "Token ${token}")
             .enqueue(object : Callback<ResponBantuanMaster>{
                 override fun onResponse(
                     call: Call<ResponBantuanMaster>,
@@ -31,6 +30,5 @@ class BantuanMasterPresenter(val dataBantuanView: DataBantuanView) {
                 }
 
             })
-
     }
 }

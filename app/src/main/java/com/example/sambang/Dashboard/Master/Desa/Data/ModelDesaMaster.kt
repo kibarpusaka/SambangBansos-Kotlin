@@ -6,7 +6,7 @@ import java.io.Serializable
 
 data class ModelDesaMaster (
     @field:SerializedName("id")
-    var id : Int? = null,
+    var id : String? = null,
 
     @field:SerializedName("Nama")
     var nama : String? = null,

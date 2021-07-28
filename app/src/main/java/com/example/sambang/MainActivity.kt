@@ -1,6 +1,5 @@
 package com.example.sambang
 
-import android.app.Notification
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,11 +8,10 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.example.sambang.Login.Login
-import com.example.sambang.Utils.Base
+import com.example.sambang.SharedPref.SessionManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_header.*
 import kotlinx.android.synthetic.main.navigation_header.view.*
-import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity()  {
 

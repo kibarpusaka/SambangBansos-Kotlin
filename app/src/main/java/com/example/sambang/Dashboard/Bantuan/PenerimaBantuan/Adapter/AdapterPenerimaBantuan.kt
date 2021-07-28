@@ -41,7 +41,7 @@ class AdapterPenerimaBantuan(val penerimaBantuan: List<ModelPenerimaBantuan?>?, 
         fun bind(penerimaBantuan: ModelPenerimaBantuan?){
             itemView.tv_status_penerima_bantuan.text = penerimaBantuan?.status.toString()
             itemView.tv_tanggal_penerima_bantuan.text = penerimaBantuan?.tglpengajuan
-            itemView.tv_bantuan_penerima_bantuan.text = penerimaBantuan?.bantuan.toString()
+            itemView.tv_bantuan_penerima_bantuan.text = penerimaBantuan?.namaBantuan
             itemView.tv_keluarga_penerima_bantuan.text = penerimaBantuan?.keluarga.toString()
 
         }

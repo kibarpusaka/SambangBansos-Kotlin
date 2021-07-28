@@ -19,6 +19,12 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView90"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Id" />
+
+            <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +99,12 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_id_keluarga_kependudukan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="01" />
 
             <TextView
                 android:id="@+id/tv_nokk_keluarga_kependudukan"

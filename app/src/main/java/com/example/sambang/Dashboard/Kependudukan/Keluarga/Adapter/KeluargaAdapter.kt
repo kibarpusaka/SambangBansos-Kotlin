@@ -43,11 +43,12 @@ class KeluargaAdapter(val keluarga: List<ModelKeluarga?>?, val onMenuClicked: Ke
     {
         fun bind(keluarga: ModelKeluarga?)
         {
+            itemView.tv_id_keluarga_kependudukan.text = keluarga?.id.toString()
             itemView.tv_nokk_keluarga_kependudukan.text = keluarga?.nomerkk.toString()
             itemView.tv_alamat_keluarga_kependudukan.text = keluarga?.alamat
             itemView.tv_rt_keluarga_kependudukan.text = keluarga?.rt.toString()
             itemView.tv_rw_keluarga_kependudukan.text = keluarga?.rw.toString()
-            itemView.tv_desa_keluarga_kependudukan.text = keluarga?.desa.toString()
+            itemView.tv_desa_keluarga_kependudukan.text = keluarga?.namaDesa
         }
     }
 

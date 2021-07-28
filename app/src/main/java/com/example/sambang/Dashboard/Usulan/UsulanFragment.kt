@@ -45,10 +45,10 @@ class UsulanFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        cv_pengajuan_usulan.setOnClickListener {
-            val pengajuan_usulan = Intent (this@UsulanFragment.context, PengajuanActivity::class.java)
-            startActivity(pengajuan_usulan)
-        }
+//        cv_pengajuan_usulan.setOnClickListener {
+//            val pengajuan_usulan = Intent (this@UsulanFragment.context, PengajuanActivity::class.java)
+//            startActivity(pengajuan_usulan)
+//        }
 
         cv_data_usulan_usulan.setOnClickListener {
             val data_usulan = Intent (this@UsulanFragment.context, DaftarUsulanActivity::class.java)

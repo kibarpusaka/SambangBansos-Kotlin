@@ -54,8 +54,8 @@ class AdapterNikAktif(val nikAktif: List<ModelNikAktif?>?) : RecyclerView.Adapte
             itemView.tv_rt_nik_aktif.text = nikAktif?.rt.toString()
             itemView.tv_rw_nik_aktif.text = nikAktif?.rw.toString()
             itemView.tv_nikvalid_nik_aktif.text = nikAktif?.nikvalid.toString()
-            itemView.tv_desa_nik_aktif.text = nikAktif?.desa.toString()
-            itemView.tv_keluarga_nik_aktif.text = nikAktif?.keluarga.toString()
+            itemView.tv_desa_nik_aktif.text = nikAktif?.namaDesa
+            itemView.tv_keluarga_nik_aktif.text = nikAktif?.noKK
 
         }
     }

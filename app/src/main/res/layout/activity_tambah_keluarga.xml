@@ -74,6 +74,9 @@
             android:padding="10dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/custom_edit_text"
+            android:inputType="number"
+            android:maxLength="17"
+
             android:backgroundTint="@color/white" />
 
         <TextView
@@ -92,6 +95,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
+            android:maxLength="100"
             android:background="@drawable/custom_edit_text"
             android:backgroundTint="@color/white" />
 
@@ -111,6 +115,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
+            android:inputType="number"
+            android:maxLength="3"
             android:background="@drawable/custom_edit_text"
             android:backgroundTint="@color/white" />
 
@@ -130,6 +136,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
+            android:inputType="number"
+            android:maxLength="3"
             android:background="@drawable/custom_edit_text"
             android:backgroundTint="@color/white" />
 
@@ -149,8 +157,21 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
+            android:inputType="number"
+            android:maxLength="297"
             android:background="@drawable/custom_edit_text"
             android:backgroundTint="@color/white" />
+
+        <Spinner
+            android:id="@+id/spiner_keluarga_desa"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:backgroundTint="@color/white"
+            />
 
         <Button
             android:id="@+id/btn_create_keluarga"

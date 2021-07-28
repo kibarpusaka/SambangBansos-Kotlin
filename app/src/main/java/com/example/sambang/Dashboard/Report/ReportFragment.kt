@@ -1,11 +1,17 @@
 package com.example.sambang.Dashboard.Report
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.sambang.Dashboard.Report.ReportPenerima.Presenter.ReportPenerimaActivity
+import com.example.sambang.Dashboard.Usulan.DaftarUsulan.DaftarUsulanActivity
+import com.example.sambang.Dashboard.Usulan.Pengajuan.PengajuanActivity
 import com.example.sambang.R
+import kotlinx.android.synthetic.main.fragment_report.*
+import kotlinx.android.synthetic.main.fragment_usulan.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +42,15 @@ class ReportFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_report, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        cv_penerima_bantuan_report.setOnClickListener {
+            val report_penerima = Intent (this@ReportFragment.context, ReportPenerimaActivity::class.java)
+            startActivity(report_penerima)
+        }
+
     }
 
     companion object {

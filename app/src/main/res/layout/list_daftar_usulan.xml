@@ -65,6 +65,11 @@
                 android:layout_height="wrap_content"
                 android:text="Nik Valik" />
             <TextView
+                android:id="@+id/textView17m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status" />
+            <TextView
                 android:id="@+id/textView17b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -189,6 +194,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="true" />
+            <TextView
+                android:id="@+id/tv_status_daftar_usulan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0" />
             <TextView
                 android:id="@+id/tv_desa_daftar_usulan"
                 android:layout_width="match_parent"

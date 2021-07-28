@@ -29,7 +29,7 @@
             app:title="Penerima Bantuan"
             app:titleTextColor="#FFFFFF" />
 
-        <EditText
+        <SearchView
             android:id="@+id/in_search_penerima_bantuan"
             android:layout_width="0dp"
             android:layout_height="50dp"

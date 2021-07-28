@@ -42,11 +42,20 @@ data class ModelDaftarUsulan(
     @Expose
     var nikvalid : Boolean? = null,
 
+    @SerializedName("Status")
+    @Expose
+    var status : Int? = null,
+
     @SerializedName("Desa")
     @Expose
     var desa : Int? = null,
 
     @SerializedName("Keluarga")
     @Expose
-    var keluarga : Int? = null
+    var keluarga : Int? = null,
+
+    var namaDesa : String = "",
+
+    var noKK : String = ""
+
 ) : Serializable

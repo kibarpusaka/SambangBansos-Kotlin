@@ -1,15 +1,14 @@
-package com.example.sambang.Dashboard.Usulan.DaftarUsulan.Adapter
+package com.example.sambang.Dashboard.Usulan.Pengajuan.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
-import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Data.ModelDaftarUsulan
 import com.example.sambang.R
 import kotlinx.android.synthetic.main.list_daftar_usulan.view.*
 
-class AdapterDaftarUsulan(val daftarUsulan: List<ModelNikAktif?>?) : RecyclerView.Adapter<AdapterDaftarUsulan.MyHolder>()
+class AdapterPengajuan(val daftarUsulan: List<ModelNikAktif?>?) : RecyclerView.Adapter<AdapterPengajuan.MyHolder>()
 {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder
@@ -44,4 +43,5 @@ class AdapterDaftarUsulan(val daftarUsulan: List<ModelNikAktif?>?) : RecyclerVie
             itemView.tv_desa_daftar_usulan.text = daftarUsulan?.namaDesa
         }
     }
+
 }

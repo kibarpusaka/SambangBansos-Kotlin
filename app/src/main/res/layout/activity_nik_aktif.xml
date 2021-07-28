@@ -30,7 +30,7 @@
             app:title="Nik Aktif"
             app:titleTextColor="#FFFFFF" />
 
-        <EditText
+        <SearchView
             android:id="@+id/in_search_nik_aktif"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -70,19 +70,19 @@
         android:layout_below="@+id/constraintLayout"
         tools:listitem="@layout/list_nik_aktif" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/btAddDataNikAktif"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="@dimen/high"-->
-<!--        android:layout_marginLeft="@dimen/high"-->
-<!--        android:layout_marginTop="@dimen/high"-->
-<!--        android:layout_marginEnd="@dimen/high"-->
-<!--        android:layout_marginRight="@dimen/high"-->
-<!--        android:layout_marginBottom="@dimen/high"-->
-<!--        android:clickable="true"-->
-<!--        android:src="@drawable/ic_add_white"-->
-<!--        app:backgroundTint="@color/blue_kom" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_create_nikaktif"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/high"
+        android:layout_marginLeft="@dimen/high"
+        android:layout_marginTop="@dimen/high"
+        android:layout_marginEnd="@dimen/high"
+        android:layout_marginRight="@dimen/high"
+        android:layout_marginBottom="@dimen/high"
+        android:clickable="true"
+        android:src="@drawable/ic_add_white"
+        app:backgroundTint="@color/blue_kom" />
 </RelativeLayout>

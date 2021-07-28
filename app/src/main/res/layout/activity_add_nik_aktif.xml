@@ -59,13 +59,13 @@
             android:layout_marginTop="2dp"
             android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:text="Masukan Nomer Nik"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Masukan Nomer Nik"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_nik"
@@ -75,186 +75,202 @@
                 android:padding="10dp"
                 android:hint="Masukan Nomer Nik"
                 android:layout_marginTop="5dp"
+                android:inputType="number"
+                android:maxLength="17"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:text="Masukan Nama"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Masukan Nama"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_nama"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:hint="Masukan Nama"
                 android:padding="10dp"
+                android:inputType="textPersonName"
+                android:maxLength="50"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Tempat Lahir"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Tempat Lahir"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_tempat"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Tempat Lahir"
+                android:inputType="text"
+                android:maxLength="25"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Tanggal Lahir"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Tanggal Lahir"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_tanggal"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:hint="YYYY/MM/DD/"
+                android:hint="YYYY-MM-DD"
+                android:inputType="date"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Alamat"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Alamat"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_alamat"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:hint="Masukan Alamat"
                 android:padding="10dp"
+                android:inputType="text"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Rt"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Rt"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_rt"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:hint="Masukan Rt"
                 android:padding="10dp"
+                android:inputType="number"
+                android:maxLength="3"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Rw"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Rw"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_rw"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Rw"
+                android:inputType="number"
+                android:maxLength="3"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Apakah Nik Valid"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Apakah Nik Valid"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_nikvalid"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Apakah Nik Valid"
+                android:inputType="text"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Desa"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Desa"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_desa"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Desa"
+                android:inputType="number"
+                android:maxLength="297"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Masukan Keluarga"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Masukan Keluarga"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/et_nikaktif_keluarga"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Keluarga"
+                android:inputType="number"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 

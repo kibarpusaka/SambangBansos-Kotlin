@@ -29,7 +29,7 @@
             app:title="Check NIK"
             app:titleTextColor="#FFFFFF" />
 
-        <EditText
+        <SearchView
             android:id="@+id/in_search_check_nik_kependudukan"
             android:layout_width="0dp"
             android:layout_height="50dp"

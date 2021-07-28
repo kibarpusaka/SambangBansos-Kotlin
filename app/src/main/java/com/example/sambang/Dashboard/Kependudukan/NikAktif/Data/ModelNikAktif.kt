@@ -8,47 +8,55 @@ data class ModelNikAktif(
 
     @SerializedName("id")
     @Expose
-    var id : Int? = null,
+    var id: Int? = null,
 
     @SerializedName("Nik")
     @Expose
-    var nik : String? = null,
+    var nik: String? = null,
 
     @SerializedName("Nama")
     @Expose
-    var nama : String? = null,
+    var nama: String? = null,
 
     @SerializedName("TmpLahir")
     @Expose
-    var tempatlahir : String? = null,
+    var tempatlahir: String? = null,
 
     @SerializedName("TglLahir")
     @Expose
-    var tanggallahir : String? = null,
+    var tanggallahir: String? = null,
 
     @SerializedName("Alamat")
     @Expose
-    var alamat : String? = null,
+    var alamat: String? = null,
 
     @SerializedName("Rt")
     @Expose
-    var rt : Int? = null,
+    var rt: String? = null,
 
     @SerializedName("Rw")
     @Expose
-    var rw : Int? = null,
+    var rw: String? = null,
 
     @SerializedName("NikValid")
     @Expose
-    var nikvalid : Boolean? = null,
+    var nikvalid: Boolean? = null,
+
+    @SerializedName("Status")
+    @Expose
+    var status: String? = null,
 
     @SerializedName("Desa")
     @Expose
-    var desa : Int? = null,
+    var desa: String? = null,
 
     @SerializedName("Keluarga")
     @Expose
-    var keluarga : Int? = null
+    var keluarga: String? = null,
+
+    var namaDesa: String = "",
+
+    var noKK : String = ""
 
 ) : Serializable
 

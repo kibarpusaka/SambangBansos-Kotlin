@@ -11,7 +11,7 @@ data class ModelPenerimaBantuan(
 
     @SerializedName("Status")
     @Expose
-    var status : Int? = null,
+    var status : String? = null,
 
     @SerializedName("TglPengajuan")
     @Expose
@@ -23,7 +23,9 @@ data class ModelPenerimaBantuan(
 
     @SerializedName("Keluarga")
     @Expose
-    var keluarga : Int? = null
+    var keluarga : Int? = null,
+
+    var namaBantuan : String = ""
 
 ) : Serializable
 

@@ -10,10 +10,10 @@ import retrofit2.Response
 
 class AddNikAktifPresenter(val addNikAktifView: AddNikAktifView)
 {
-    fun addNikAktif(dataNikAktif: ModelNikAktif )
+    fun addNikAktif(token: String,dataNikAktif: ModelNikAktif )
     {
         SambangUtils.getservice()
-            .addNikAktif(dataNikAktif.id, dataNikAktif.nik, dataNikAktif.nama, dataNikAktif.tempatlahir, dataNikAktif.tanggallahir, dataNikAktif.alamat, dataNikAktif.rt, dataNikAktif.rw, dataNikAktif.nikvalid, dataNikAktif.desa, dataNikAktif.keluarga)
+            .addWarga(token = "Token ${token}",dataNikAktif.id, dataNikAktif.nik, dataNikAktif.nama, dataNikAktif.tempatlahir, dataNikAktif.tanggallahir, dataNikAktif.alamat, dataNikAktif.rt, dataNikAktif.rw, dataNikAktif.nikvalid, dataNikAktif.desa, dataNikAktif.keluarga)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(
@@ -38,10 +38,10 @@ class AddNikAktifPresenter(val addNikAktifView: AddNikAktifView)
             })
     }
 
-    fun updateNikAktif(dataNikAktif: ModelNikAktif)
+    fun updateNikAktif(token : String,dataNikAktif: ModelNikAktif)
     {
         SambangUtils.getservice()
-            .updateNikAktif(dataNikAktif.id, dataNikAktif.nik, dataNikAktif.nama, dataNikAktif.tempatlahir, dataNikAktif.tanggallahir, dataNikAktif.alamat, dataNikAktif.rt, dataNikAktif.rw, dataNikAktif.nikvalid, dataNikAktif.desa, dataNikAktif.keluarga)
+            .updateWarga(token = "Token ${token}",dataNikAktif.id, dataNikAktif.nik, dataNikAktif.nama, dataNikAktif.tempatlahir, dataNikAktif.tanggallahir, dataNikAktif.alamat, dataNikAktif.rt, dataNikAktif.rw, dataNikAktif.nikvalid, dataNikAktif.desa, dataNikAktif.keluarga)
             .enqueue(object : Callback<ResultSimple>
             {
                 override fun onResponse(

@@ -55,8 +55,8 @@ class AdapterCheckNik(val checkNik: List<ModelNikAktif?>?, val onMenuClicked: On
             itemView.tv_rt_checknik.text = checkNik?.rt.toString()
             itemView.tv_rw_checknik.text = checkNik?.rw.toString()
             itemView.tv_nikvalid_checknik.text = checkNik?.nikvalid.toString()
-            itemView.tv_desa_checknik.text = checkNik?.desa.toString()
-            itemView.tv_keluarga_checknik.text = checkNik?.keluarga.toString()
+            itemView.tv_desa_checknik.text = checkNik?.namaDesa
+            itemView.tv_keluarga_checknik.text = checkNik?.noKK
 
         }
     }

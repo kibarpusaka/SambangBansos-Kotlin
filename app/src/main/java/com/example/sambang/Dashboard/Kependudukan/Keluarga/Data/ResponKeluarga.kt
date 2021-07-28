@@ -6,11 +6,11 @@ import com.google.gson.annotations.SerializedName
 data class ResponKeluarga(
 
     @field:SerializedName("status")
-    val status: Boolean? = null,
+    val status: Boolean?,
 
     @field:SerializedName("message")
-    val message: String? = null,
+    val message: String?,
 
     @field:SerializedName("data_keluarga")
-    val data_keluarga: List<ModelKeluarga>? = null
+    val data_keluarga: List<ModelKeluarga>
 )

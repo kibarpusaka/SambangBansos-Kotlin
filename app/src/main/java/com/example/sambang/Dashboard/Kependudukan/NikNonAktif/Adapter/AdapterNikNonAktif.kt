@@ -38,8 +38,8 @@ class AdapterNikNonAktif(val nikNonAktif: List<ModelNikAktif?>?) : RecyclerView.
             itemView.tv_rt_nik_non_aktif.text = nikNonAktif?.rt.toString()
             itemView.tv_rw_nik_non_aktif.text = nikNonAktif?.rw.toString()
             itemView.tv_nikvalid_nik_non_aktif.text = nikNonAktif?.nikvalid.toString()
-            itemView.tv_desa_nik_non_aktif.text = nikNonAktif?.desa.toString()
-            itemView.tv_keluarga_nik_non_aktif.text = nikNonAktif?.keluarga.toString()
+            itemView.tv_desa_nik_non_aktif.text = nikNonAktif?.namaDesa
+            itemView.tv_keluarga_nik_non_aktif.text = nikNonAktif?.noKK
 
         }
     }

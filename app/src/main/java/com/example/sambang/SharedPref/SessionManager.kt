@@ -1,8 +1,9 @@
-package com.example.sambang
+package com.example.sambang.SharedPref
 
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.sambang.Login.Data.ModelLogin
+import com.example.sambang.R
 import com.google.gson.Gson
 
 class SessionManager(context: Context) {
@@ -20,8 +21,6 @@ class SessionManager(context: Context) {
             clear()
         }.apply()
     }
-
-
 
     fun saveAuthToken(token: String?) {
         val editor = prefs.edit()
@@ -55,6 +54,10 @@ class SessionManager(context: Context) {
      * Function to fetch auth token
      */
     fun fetchAuthToken(): String? {
-        return prefs.getString(USER_TOKEN, null)
+        return prefs.getString(USER_TOKEN, "")
+//        if(prefs.getString(USER_TOKEN, "").isNullOrEmpty()){
+//            return ""
+//        }
+//        return prefs.getString(USER_TOKEN, "")!!
     }
 }

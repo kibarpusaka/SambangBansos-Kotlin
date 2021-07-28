@@ -9,17 +9,19 @@ import com.example.sambang.Dashboard.Master.Kecamatan.Data.ModelKecamatanMaster
 import com.example.sambang.R
 import com.example.sambang.Dashboard.Master.Kecamatan.Presenter.DataKecamatanView
 import com.example.sambang.Dashboard.Master.Kecamatan.Presenter.KecamatanPresenter
+import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_kecamatan_master.*
 
 class KecamatanMasterActivity : Base(), DataKecamatanView{
     private lateinit var presenter: KecamatanPresenter
-
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kecamatan_master)
         presenter = KecamatanPresenter(this)
+        sessionManager = SessionManager(this)
 
         refreshDataKecamatan()
         searchListenerKecamatan()
@@ -27,7 +29,7 @@ class KecamatanMasterActivity : Base(), DataKecamatanView{
     }
 
     private fun refreshDataKecamatan() {
-        presenter.getDataKecamatan(user)
+        presenter.getDataKecamatan(sessionManager.getUserToken())
     }
 
     private fun searchListenerKecamatan() {

@@ -8,7 +8,7 @@ data class ModelKeluarga (
 
     @SerializedName("id")
     @Expose
-    var id : Int? = null,
+    var id : String? = null,
 
     @SerializedName("NomerKK")
     @Expose
@@ -20,14 +20,16 @@ data class ModelKeluarga (
 
     @SerializedName("Rt")
     @Expose
-    var rt : Int? = null,
+    var rt : String? = null,
 
     @SerializedName("Rw")
     @Expose
-    var rw : Int? = null,
+    var rw : String? = null,
 
     @SerializedName("Desa")
     @Expose
-    var desa : Int? = null,
+    var desa : String? = null,
+
+    var namaDesa : String = ""
 
 ) : Serializable

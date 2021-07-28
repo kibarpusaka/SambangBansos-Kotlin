@@ -10,16 +10,19 @@ import com.example.sambang.R
 import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.Dashboard.Master.Desa.Presenter.DataDesaView
 import com.example.sambang.Dashboard.Master.Desa.Presenter.DesaPresenter
+import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_desa_master.*
 
 class DesaMasterActivity : Base(), DataDesaView {
     private lateinit var presenter : DesaPresenter
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_desa_master)
         presenter = DesaPresenter(this)
+        sessionManager = SessionManager(this)
 
         refreshDataDesa()
         searchListener()
@@ -27,7 +30,7 @@ class DesaMasterActivity : Base(), DataDesaView {
     }
 
     private fun refreshDataDesa() {
-        presenter.getDataDesa(user)
+        presenter.getDataDesa(sessionManager.getUserToken())
     }
 
     private fun searchListener(){
@@ -41,7 +44,7 @@ class DesaMasterActivity : Base(), DataDesaView {
                 return false
             }
             override fun onQueryTextChange(newText: String?): Boolean {
-                if(newText != null && newText.toString().trim().isEmpty()){
+                if (newText != null && newText.toString().trim().isEmpty()){
                     presenter.showAllData()
                     return true
                 }
