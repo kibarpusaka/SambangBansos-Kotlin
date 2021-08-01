@@ -7,6 +7,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Adapter.AdapterPenerimaBantuan
+import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Adapter.AdapterReportPenerima
 import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Data.ModelPenerimaBantuan
 import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Presenter.DataPenerimaBantuanView
 import com.example.sambang.Dashboard.Bantuan.PenerimaBantuan.Presenter.PenerimaBantuanPresenter
@@ -14,11 +15,13 @@ import com.example.sambang.Dashboard.Kependudukan.Keluarga.AddKeluargaActivity
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter.KeluargaPresenter
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Adapter.AdapterDaftarUsulan
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_penerima_bantuan.*
 import org.jetbrains.anko.alert
+import org.jetbrains.anko.startActivityForResult
 import org.jetbrains.anko.toast
 
 class PenerimaBantuanActivity : Base(), DataPenerimaBantuanView {
@@ -32,6 +35,13 @@ class PenerimaBantuanActivity : Base(), DataPenerimaBantuanView {
 
         inAction()
         refreshPenerimaBantuan()
+        actionToolbar()
+    }
+
+    private fun actionToolbar() {
+        toolbar_penerima_bantuan_bantuan.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun inAction() {
@@ -58,11 +68,26 @@ class PenerimaBantuanActivity : Base(), DataPenerimaBantuanView {
     private fun refreshPenerimaBantuan() {
         presenter.getDataDesa(sessionManager.getUserToken())
         presenter.getDataKeluarga(sessionManager.getUserToken())
+        presenter.getBantuan(sessionManager.getUserToken())
     }
 
     override fun onSuccessDataPenerimaBantuan(data: List<ModelNikAktif?>?) {
         rv_penerima_bantuan_bantuan.layoutManager = LinearLayoutManager(applicationContext)
-        rv_penerima_bantuan_bantuan.adapter = AdapterDaftarUsulan(data)
+        rv_penerima_bantuan_bantuan.adapter = AdapterPenerimaBantuan(data, object : AdapterPenerimaBantuan.OnMenuClicked{
+            override fun click(menuItem: MenuItem, penerimaBantuan: ModelNikAktif) {
+                when(menuItem.itemId){
+                    R.id.editPenerimaBantuan -> editPenerima(penerimaBantuan)
+                }
+            }
+
+        })
+    }
+
+    private fun editPenerima(penerimaBantuan: ModelNikAktif) {
+        val intent = Intent(this, AddPenerimaActivity::class.java)
+        intent.putExtra(TAGS.USER, user)
+        intent.putExtra(TAGS.PENERIMABANTUAN, penerimaBantuan)
+        startActivityForResult(intent, 1)
     }
 
     override fun onErrorDataPenerimaBantuan(msg: String?) {

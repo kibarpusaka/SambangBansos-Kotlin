@@ -9,4 +9,6 @@ interface DataKeluargaView {
 
     fun onSuccessDeleteKeluarga(msg : String?)
     fun onErrorDeleteKeluarga(msg : String?)
+
+
 }

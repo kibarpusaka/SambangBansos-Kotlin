@@ -4,32 +4,36 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class ModelKeluarga (
+data class ModelKeluarga(
 
     @SerializedName("id")
     @Expose
-    var id : String? = null,
+    var id: String? = null,
 
     @SerializedName("NomerKK")
     @Expose
-    var nomerkk : String? = null,
+    var nomerkk: String? = null,
 
     @SerializedName("Alamat")
     @Expose
-    var alamat : String? = null,
+    var alamat: String? = null,
 
     @SerializedName("Rt")
     @Expose
-    var rt : String? = null,
+    var rt: String? = null,
 
     @SerializedName("Rw")
     @Expose
-    var rw : String? = null,
+    var rw: String? = null,
 
     @SerializedName("Desa")
     @Expose
-    var desa : String? = null,
+    var desa: String? = null,
 
-    var namaDesa : String = ""
+    var namaDesa: String = ""
 
-) : Serializable
+) : Serializable {
+    override fun toString(): String {
+        return nomerkk.toString()
+    }
+}

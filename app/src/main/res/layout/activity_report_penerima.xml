@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_penerima_bantuan_bantuan"
+            android:id="@+id/toolbar_penerima_bantuan_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_kom"
@@ -48,7 +48,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_penerima_bantuan_bantuan"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_penerima_bantuan_report"
             tools:ignore="NewApi" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

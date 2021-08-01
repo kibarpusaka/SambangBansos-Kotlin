@@ -79,11 +79,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Keluarga" />
-<!--            <TextView-->
-<!--                android:id="@+id/textView97c"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Bantuan" />-->
+            <TextView
+                android:id="@+id/textView97c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bantuan" />
         </LinearLayout>
 
         <LinearLayout
@@ -151,11 +151,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=":" />
-<!--            <TextView-->
-<!--                android:id="@+id/textView28d"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text=":" />-->
+            <TextView
+                android:id="@+id/textView28d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=":" />
         </LinearLayout>
 
         <LinearLayout
@@ -224,29 +224,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1" />
-<!--            <TextView-->
-<!--                android:id="@+id/tv_bantuan_daftar_usulan"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="1" />-->
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivMenuPenerima"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_bantuan_daftar_usulan"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_more_black"
-                android:layout_gravity="right"
-                android:layout_marginTop="100dp"
-                android:layout_alignParentRight="true"/>
+                android:text="1" />
         </LinearLayout>
-
 
     </LinearLayout>
 

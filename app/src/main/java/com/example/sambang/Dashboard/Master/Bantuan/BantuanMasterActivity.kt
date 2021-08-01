@@ -1,5 +1,6 @@
 package com.example.sambang.Dashboard.Master.Bantuan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import com.example.sambang.Dashboard.Master.Bantuan.Adapter.AdapterBantuanMaster
 import com.example.sambang.Dashboard.Master.Bantuan.Data.ModelBantuanMaster
 import com.example.sambang.Dashboard.Master.Bantuan.Presenter.BantuanMasterPresenter
 import com.example.sambang.Dashboard.Master.Bantuan.Presenter.DataBantuanView
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
@@ -22,6 +24,13 @@ class BantuanMasterActivity : Base(), DataBantuanView {
         sessionManager = SessionManager(this)
 
         refreshBantuan()
+        actionToolbar()
+    }
+
+    private fun actionToolbar() {
+        toolbar_bantuan_master.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun refreshBantuan() {

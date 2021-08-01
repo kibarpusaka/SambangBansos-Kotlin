@@ -12,5 +12,7 @@ data class ResponKeluarga(
     val message: String?,
 
     @field:SerializedName("data_keluarga")
-    val data_keluarga: List<ModelKeluarga>
+    val data_keluarga: List<ModelKeluarga>,
+
+
 )

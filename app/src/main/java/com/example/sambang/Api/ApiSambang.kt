@@ -46,31 +46,39 @@ interface ApiSambang {
 
     @FormUrlEncoded
     @POST("/api/v1/penerimabantuan/")
-    fun addPenerimaBantuan(
+    fun addPenerima(
         @Header("Authorization") token: String?,
         @Field("id") id: Int?,
-        @Field("Status") Status: String?,
-        @Field("TglPengajuan") TglPengajuan: String?,
-        @Field("Bantuan") Bantuan: Int?,
-        @Field("Keluarga") Keluarga: Int?
-    ) : Call<ResultSimple>
+        @Field("Nik") nik: String?,
+        @Field("Nama") nama: String?,
+        @Field("TmpLahir") tempatlahir: String?,
+        @Field("TglLahir") tanggallahir: String?,
+        @Field("Alamat") alamat: String?,
+        @Field("Rt") rt: String?,
+        @Field("Rw") rw: String?,
+        @Field("NikValid") nikvalid: Boolean?,
+        @Field("Desa") desa: String?,
+        @Field("Keluarga") keluarga: String?,
+        @Field("Bantuan") bantuan: String?,
+        ) : Call<ResultSimple>
 
     @FormUrlEncoded
     @PUT("/api/v1/penerimabantuan/{id}/")
-    fun updatePenerimaBantuan(
+    fun updatePenerima(
         @Header("Authorization") token: String?,
         @Path("id") id: Int?,
-        @Field("Status") Status: String?,
-        @Field("TglPengajuan") TglPengajuan: String?,
-        @Field("Bantuan") Bantuan: Int?,
-        @Field("Keluarga") Keluarga: Int?
-    ) : Call<ResultSimple>
-
-    @DELETE("/api/v1/penerimabantuan/{id}/")
-    fun deletePenerimaBantuan(
-        @Header("Authorization") token: String?,
-        @Path("id") id: Int?,
-    ) : Call<ResultSimple>
+        @Field("Nik") nik: String?,
+        @Field("Nama") nama: String?,
+        @Field("TmpLahir") tempatlahir: String?,
+        @Field("TglLahir") tanggallahir: String?,
+        @Field("Alamat") alamat: String?,
+        @Field("Rt") rt: String?,
+        @Field("Rw") rw: String?,
+        @Field("NikValid") nikvalid: Boolean?,
+        @Field("Desa") desa: String?,
+        @Field("Keluarga") keluarga: String?,
+        @Field("Bantuan") bantuan: String?,
+        ) : Call<ResultSimple>
 
 
 

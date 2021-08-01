@@ -1,5 +1,6 @@
 package com.example.sambang.Dashboard.Master.Desa
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.SearchView
@@ -10,6 +11,7 @@ import com.example.sambang.R
 import com.example.sambang.Dashboard.Master.Desa.Data.ModelDesaMaster
 import com.example.sambang.Dashboard.Master.Desa.Presenter.DataDesaView
 import com.example.sambang.Dashboard.Master.Desa.Presenter.DesaPresenter
+import com.example.sambang.MainActivity
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
 import kotlinx.android.synthetic.main.activity_desa_master.*
@@ -26,7 +28,14 @@ class DesaMasterActivity : Base(), DataDesaView {
 
         refreshDataDesa()
         searchListener()
+        actionToolbar()
 
+    }
+
+    private fun actionToolbar() {
+        toolbar_desa_master.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun refreshDataDesa() {

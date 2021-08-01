@@ -11,6 +11,7 @@ import com.example.sambang.Dashboard.Kependudukan.NikAktif.Adapter.AdapterNikAkt
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.DataNikAktifView
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.NikAktifPresenter
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
@@ -32,6 +33,13 @@ class NikAktifActivity : Base(), DataNikAktifView {
         setActionButton()
         refreshNikAktif()
         searcListener()
+        actionToolbar()
+    }
+
+    private fun actionToolbar() {
+        toolbar_nik_aktif.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun setActionButton() {

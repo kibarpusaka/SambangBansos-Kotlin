@@ -5,14 +5,18 @@ import java.io.Serializable
 
 data class ModelBantuanMaster(
     @field:SerializedName("id")
-    var id : Int? = null,
+    var id : String? = null,
 
     @field:SerializedName("Nama")
-    var nama : String? = null,
+    var nama : String,
 
     @field:SerializedName("Tahun")
     var tahun : Int? = null,
 
     @field:SerializedName("Sumber")
     var sumber : String? = null
-) : Serializable
+) : Serializable {
+    override fun toString(): String {
+        return nama
+    }
+}

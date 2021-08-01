@@ -11,6 +11,8 @@ import com.example.sambang.Dashboard.Kependudukan.Keluarga.Adapter.KeluargaAdapt
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Data.ModelKeluarga
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter.DataKeluargaView
 import com.example.sambang.Dashboard.Kependudukan.Keluarga.Presenter.KeluargaPresenter
+import com.example.sambang.Dashboard.Kependudukan.KependudukanFragment
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import kotlinx.android.synthetic.main.activity_desa_master.*
@@ -36,8 +38,14 @@ class KeluargaActivity : Base(), DataKeluargaView
         setActionButton()
         refreshKeluarga()
         searchListener()
+        actionToolbar()
 
+    }
 
+    private fun actionToolbar() {
+        toolbar_keluarga_kependudukan.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun setActionButton() {

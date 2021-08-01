@@ -21,6 +21,15 @@ class PenerimaBantuanPresenter(val dataPenerimaBantuanView: DataPenerimaBantuanV
     private val penerima = mutableListOf<ModelNikAktif>()
     private var family = mutableListOf<ModelKeluarga>()
     private var villages = mutableListOf<ModelDesaMaster>()
+    private var bantuan = mutableListOf<ModelBantuanMaster>()
+
+    private fun getNamaBantuan(bantuanId : String) : String{
+        if (bantuanId == null){
+            return ""
+        }
+        val bantuan = bantuan.find { b -> b.id == bantuanId} ?: return ""
+        return bantuan.nama ?: ""
+    }
 
     private fun getNoKK(keluargaId: String?) : String{
         if (keluargaId == null){
@@ -66,6 +75,11 @@ class PenerimaBantuanPresenter(val dataPenerimaBantuanView: DataPenerimaBantuanV
                             w.namaDesa = getNamaDesaOnly(w.desa.toString())
                         }
 
+                        val bantuans = body.data_penerima_bantuan ?: mutableListOf()
+                        bantuans.forEach { b ->
+                            b.namaBantuan = getNamaBantuan(b.bantuan.toString())
+                        }
+
                         penerima.clear()
                         penerima.addAll(body.data_penerima_bantuan)
                         dataPenerimaBantuanView.onSuccessDataPenerimaBantuan(body.data_penerima_bantuan)
@@ -74,6 +88,31 @@ class PenerimaBantuanPresenter(val dataPenerimaBantuanView: DataPenerimaBantuanV
                     }
                 }
                 override fun onFailure(call: Call<ResponPenerimaBantuan>, t: Throwable) {
+                    dataPenerimaBantuanView.onErrorDataPenerimaBantuan(t.localizedMessage)
+                }
+
+            })
+    }
+
+    fun getBantuan(token : String){
+        SambangUtils.getservice()
+            .getBantuan(token = "Token ${token}")
+            .enqueue(object : Callback<ResponBantuanMaster>{
+                override fun onResponse(
+                    call: Call<ResponBantuanMaster>,
+                    response: Response<ResponBantuanMaster>
+                ) {
+                    val body = response.body()
+                    if (body?.status == true){
+                        bantuan.clear()
+                        bantuan.addAll(body.data)
+                        getDataPenerimaBantuan(token)
+                    }else{
+                        dataPenerimaBantuanView.onErrorDataPenerimaBantuan("Cannot fetch data of desa")
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponBantuanMaster>, t: Throwable) {
                     dataPenerimaBantuanView.onErrorDataPenerimaBantuan(t.localizedMessage)
                 }
 

@@ -1,5 +1,6 @@
 package com.example.sambang.Dashboard.Usulan.DaftarUsulan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
@@ -9,6 +10,7 @@ import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Adapter.AdapterDaftarUs
 import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Data.ModelDaftarUsulan
 import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Presenter.DaftarUsulanPresenter
 import com.example.sambang.Dashboard.Usulan.DaftarUsulan.Presenter.DaftarUsulanView
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
@@ -25,6 +27,13 @@ class DaftarUsulanActivity : Base(), DaftarUsulanView {
         sessionManager = SessionManager(this)
         refreshDaftarUsulan()
         searchListener()
+        actionToolbar()
+    }
+
+    private fun actionToolbar() {
+        toolbar_daftar_usulan.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun refreshDaftarUsulan() {

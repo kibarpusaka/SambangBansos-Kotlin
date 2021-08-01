@@ -141,7 +141,7 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="YYYY-MM-DD"
-                android:inputType="date"
+                android:inputType="datetime"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
@@ -219,7 +219,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/et_nikaktif_nikvalid"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -227,7 +227,7 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Apakah Nik Valid"
-                android:inputType="text"
+                android:entries="@array/nikvalid"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
 
@@ -240,7 +240,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/et_nikaktif_desa"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -248,10 +248,18 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Desa"
-                android:inputType="number"
-                android:maxLength="297"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
+            <EditText
+                android:id="@+id/et_nikaktif_desa_hide"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:background="@drawable/custom_edit_text"
+                android:backgroundTint="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -262,7 +270,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/et_nikaktif_keluarga"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
@@ -270,9 +278,18 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:hint="Masukan Keluarga"
-                android:inputType="number"
                 android:background="@drawable/custom_edit_text"
                 android:backgroundTint="@color/white" />
+            <EditText
+                android:id="@+id/et_nikaktif_keluarga_hide"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:background="@drawable/custom_edit_text"
+                android:backgroundTint="@color/white"/>
 
             <Button
                 android:id="@+id/btn_create_nikaktif"

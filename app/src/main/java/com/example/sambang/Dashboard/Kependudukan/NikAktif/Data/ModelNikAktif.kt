@@ -54,9 +54,15 @@ data class ModelNikAktif(
     @Expose
     var keluarga: String? = null,
 
+    @SerializedName("Bantuan")
+    @Expose
+    var bantuan: String? = null,
+
     var namaDesa: String = "",
 
-    var noKK : String = ""
+    var noKK : String = "",
+
+    var namaBantuan : String = ""
 
 ) : Serializable
 

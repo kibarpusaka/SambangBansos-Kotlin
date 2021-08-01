@@ -1,5 +1,6 @@
 package com.example.sambang.Dashboard.Kependudukan.NikNonAktif
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
@@ -8,6 +9,7 @@ import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.DataNikAktifView
 import com.example.sambang.Dashboard.Kependudukan.NikNonAktif.Adapter.AdapterNikNonAktif
 import com.example.sambang.Dashboard.Kependudukan.NikNonAktif.Presenter.NikNonAktifPresenter
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
@@ -24,6 +26,14 @@ class NikNonAktifActivity : Base(), DataNikAktifView {
 
         refreshNikNonAktif()
         searchListener()
+        actionToolbar()
+    }
+
+    private fun actionToolbar() {
+        toolbar_nik_non_aktif.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+
+        }
     }
 
     private fun refreshNikNonAktif() {

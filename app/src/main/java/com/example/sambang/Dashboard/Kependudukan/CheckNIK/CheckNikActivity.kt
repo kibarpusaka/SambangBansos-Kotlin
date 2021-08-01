@@ -13,6 +13,7 @@ import com.example.sambang.Dashboard.Kependudukan.NikAktif.AddNikAktifActivity
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Data.ModelNikAktif
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.DataNikAktifView
 import com.example.sambang.Dashboard.Kependudukan.NikAktif.Presenter.NikAktifPresenter
+import com.example.sambang.MainActivity
 import com.example.sambang.R
 import com.example.sambang.SharedPref.SessionManager
 import com.example.sambang.Utils.Base
@@ -33,7 +34,14 @@ class CheckNikActivity : Base(), DataNikAktifView {
         sessionManager = SessionManager(this)
         refreshCheckNik()
         searchListener()
+        actionToolbar()
 
+    }
+
+    private fun actionToolbar() {
+        toolbar_check_nik_kependudukan.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+        }
     }
 
     private fun refreshCheckNik() {

@@ -8,5 +8,8 @@ data class ResultSimple (
     val message: String? = null,
 
     @field:SerializedName("status")
-    val status: Boolean? = null
+    val status: Boolean? = null,
+
+    @field:SerializedName("NomerKK")
+    val NomerKK: String?,
         )

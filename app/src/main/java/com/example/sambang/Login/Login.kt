@@ -34,12 +34,12 @@ class Login : AppCompatActivity(), LoginView  {
             user.password = in_password.text.toString()
 
             if(user.username!!.isEmpty()){
-                in_email.error = "Username required"
+                in_email.error = "Username Kosong"
                 in_email.requestFocus()
                 return@onClick
             }
             if(user.password!!.isEmpty()){
-                in_password.error = "Password required"
+                in_password.error = "Password Kosong"
                 in_password.requestFocus()
                 return@onClick
             }
@@ -49,7 +49,7 @@ class Login : AppCompatActivity(), LoginView  {
     }
 
     override fun onSuccessLogin(token: String, user: ModelLogin) {
-        toast("Berhasil login").show()
+        toast("Berhasil Melakukan Login").show()
         sessionManager.saveUserData(user)
         sessionManager.saveAuthToken(token)
         startActivity<MainActivity>(Base.TAGS.USER to user)
@@ -58,6 +58,6 @@ class Login : AppCompatActivity(), LoginView  {
     }
 
     override fun onErrorLogin(msg: String?) {
-        toast("Tidak Bisa Masuk").show()
+        toast("Masukan Username atau Password Yang Benar").show()
     }
 }

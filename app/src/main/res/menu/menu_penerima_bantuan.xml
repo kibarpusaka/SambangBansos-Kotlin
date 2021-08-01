@@ -4,8 +4,4 @@
         android:id="@+id/editPenerimaBantuan"
         android:icon="@drawable/ic_edit"
         android:title="Edit" />
-    <item
-        android:id="@+id/hapusPenerimaBantuan"
-        android:icon="@drawable/ic_delete"
-        android:title="Hapus" />
 </menu>

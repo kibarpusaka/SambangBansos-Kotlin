@@ -9,7 +9,7 @@
     tools:context=".Dashboard.Kependudukan.Keluarga.AddKeluargaActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_desa_master"
+        android:id="@+id/toolbar_tambah_keluarga"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blue_kom"
@@ -150,28 +150,27 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
-        <EditText
+        <Spinner
             android:id="@+id/et_keluarga_desa"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
-            android:inputType="number"
-            android:maxLength="297"
             android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white" />
+            android:backgroundTint="@color/white" >
 
-        <Spinner
-            android:id="@+id/spiner_keluarga_desa"
+        </Spinner>
+        <EditText
+            android:id="@+id/et_keluarga_desa_hide"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:padding="10dp"
+            android:visibility="gone"
             android:background="@drawable/custom_edit_text"
-            android:backgroundTint="@color/white"
-            />
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:id="@+id/btn_create_keluarga"
